@@ -1,0 +1,196 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const articles = [
+  {
+    category: 'Tax',
+    title: '5 Tax Deductions Sydney Businesses Miss Every Year',
+    excerpt: 'Most business owners claim the obvious deductions but overlook several legitimate strategies that could save thousands annually. From home office costs to motor vehicle deductions, here\u2019s what you might be leaving on the table.',
+    date: '12 Feb 2026',
+    readTime: '5 min read',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=500&fit=crop',
+    alt: 'Financial charts and data analysis on a desk with calculator',
+  },
+  {
+    category: 'Business',
+    title: 'Is Your Business Structure Costing You Money?',
+    excerpt: 'The difference between operating as a sole trader, company, or trust can mean tens of thousands in tax each year. We break down the pros, cons, and transition considerations.',
+    date: '28 Jan 2026',
+    readTime: '7 min read',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=500&fit=crop',
+    alt: 'Business professionals collaborating in a modern meeting room',
+  },
+  {
+    category: 'Superannuation',
+    title: 'SMSF Property Investment: What You Need to Know in 2026',
+    excerpt: 'The rules around property investment through self-managed super funds continue to evolve. We cover the key compliance requirements and strategic considerations.',
+    date: '15 Jan 2026',
+    readTime: '6 min read',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=500&fit=crop',
+    alt: 'Modern glass office building reflecting the Sydney skyline',
+  },
+  {
+    category: 'Tax',
+    title: 'FBT Season 2026: A Checklist for Employers',
+    excerpt: "Fringe Benefits Tax returns are due soon. Here\u2019s a practical checklist to make sure you\u2019re capturing everything and not overpaying.",
+    date: '3 Jan 2026',
+    readTime: '4 min read',
+    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=500&fit=crop',
+    alt: 'Professional reviewing business documents with a pen on a wooden desk',
+  },
+  {
+    category: 'Business',
+    title: 'Cash Flow Forecasting: Why Most Small Businesses Get It Wrong',
+    excerpt: "Profitability doesn\u2019t guarantee survival. We explain why cash flow forecasting is the skill most business owners never learned but desperately need.",
+    date: '18 Dec 2025',
+    readTime: '6 min read',
+    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=500&fit=crop',
+    alt: 'Two business professionals shaking hands after a successful meeting',
+  },
+  {
+    category: 'Superannuation',
+    title: "Contribution Caps 2026: What\u2019s Changed and What It Means for You",
+    excerpt: "The ATO has updated contribution caps for the new financial year. Here\u2019s a clear summary of the changes and how to plan around them.",
+    date: '5 Dec 2025',
+    readTime: '3 min read',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop',
+    alt: 'Laptop displaying financial spreadsheets and business analytics data',
+  },
+];
+
+const categories = ['All', 'Tax', 'Business', 'Superannuation'];
+---
+
+<Layout title="Insights" description="Expert analysis and practical advice on tax, business strategy, and superannuation for Australian businesses.">
+  <Navbar />
+
+  <!-- PAGE HEADER -->
+  <section class="relative pt-36 pb-14 md:pt-44 md:pb-20" style="background: var(--color-bg-secondary);">
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <div class="section-overline mb-5 reveal">Knowledge Centre</div>
+      <h1 class="reveal stagger-1 max-w-xl" style="color: var(--color-navy); font-family: var(--font-heading);">
+        Insights &amp; Resources
+      </h1>
+      <p class="mt-5 text-[1.0625rem] leading-[1.75] max-w-lg reveal stagger-2" style="color: var(--color-text-secondary);">
+        Expert analysis and practical advice on tax, business strategy, and superannuation for Australian businesses.
+      </p>
+    </div>
+    <!-- Bottom gradient -->
+    <div class="absolute bottom-0 left-0 right-0 h-12" style="background: linear-gradient(180deg, transparent, var(--color-bg-primary));"></div>
+  </section>
+
+  <!-- FILTER + ARTICLES -->
+  <section class="py-16 md:py-24" style="background: var(--color-bg-primary);">
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <!-- Category Filters -->
+      <div class="flex flex-wrap gap-2.5 mb-14" id="category-filters">
+        {categories.map((cat, i) => (
+          <button
+            class={`filter-btn px-5 py-[9px] text-[0.8125rem] font-medium rounded-sm border transition-all duration-300 cursor-pointer ${i === 0 ? 'active' : ''}`}
+            data-filter={cat === 'All' ? 'all' : cat}
+            style={i === 0
+              ? `background: var(--color-navy); color: #fff; border-color: var(--color-navy);`
+              : `background: transparent; color: var(--color-slate-light); border-color: var(--color-border);`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      <!-- Article Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="articles-grid">
+        {articles.map((article, i) => (
+          <article
+            class={`reveal stagger-${i + 1} card group overflow-hidden`}
+            data-category={article.category}
+          >
+            <div class="aspect-[16/10] overflow-hidden">
+              <img src={article.image} alt={article.alt} class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-[1.04]" loading="lazy" />
+            </div>
+            <div class="p-6 md:p-7">
+              <span class="inline-block text-[0.625rem] font-semibold uppercase tracking-[0.12em] px-3 py-[5px] rounded-sm mb-4" style={`background: ${article.category === 'Tax' ? 'var(--color-gold-subtle)' : article.category === 'Business' ? 'rgba(27,43,75,0.05)' : 'rgba(74,85,104,0.06)'}; color: ${article.category === 'Tax' ? 'var(--color-gold)' : article.category === 'Business' ? 'var(--color-navy)' : 'var(--color-slate)'};`}>
+                {article.category}
+              </span>
+              <h3 class="text-[1.05rem] font-semibold mb-2.5 leading-[1.35]" style="font-family: var(--font-heading); color: var(--color-navy);">{article.title}</h3>
+              <p class="text-[0.8125rem] mb-5 line-clamp-3 leading-[1.7]" style="color: var(--color-text-secondary);">{article.excerpt}</p>
+              <div class="flex items-center justify-between pt-4" style="border-top: 1px solid var(--color-border-subtle);">
+                <div class="flex items-center gap-2.5">
+                  <span class="text-[0.6875rem]" style="color: var(--color-text-tertiary);">{article.date}</span>
+                  <span class="w-[3px] h-[3px] rounded-full" style="background: var(--color-border);"></span>
+                  <span class="text-[0.6875rem]" style="color: var(--color-text-tertiary);">{article.readTime}</span>
+                </div>
+                <a href="#" class="link-hover inline-flex items-center gap-1.5 text-[0.8125rem] font-semibold no-underline" style="color: var(--color-gold);">
+                  Read
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER CTA -->
+  <section class="relative py-20 md:py-28 bg-texture" style="background: var(--color-bg-secondary);">
+    <div class="relative max-w-[560px] mx-auto px-6 lg:px-10 text-center">
+      <div class="section-overline justify-center mb-5 reveal">Newsletter</div>
+      <h2 class="reveal stagger-1 mb-4" style="color: var(--color-navy); font-family: var(--font-heading); font-size: clamp(1.5rem, 2vw + 0.8rem, 2.2rem);">
+        Stay Informed
+      </h2>
+      <p class="text-[0.9375rem] leading-[1.75] mb-9 reveal stagger-2" style="color: var(--color-text-secondary);">
+        Get our latest insights delivered to your inbox monthly. No spam, just expert advice.
+      </p>
+      <form action="https://formspree.io/f/placeholder" method="POST" id="newsletter-form" class="flex flex-col sm:flex-row gap-3 reveal stagger-3">
+        <input
+          type="email"
+          name="email"
+          placeholder="your@email.com"
+          required
+          class="flex-1 px-5 py-3.5 text-[0.875rem] border rounded-[3px] transition-all duration-300"
+          style="border-color: var(--color-border); color: var(--color-text-primary); background: var(--color-bg-primary); box-shadow: var(--shadow-sm);"
+        />
+        <button type="submit" class="btn-primary !py-3.5 !px-7 text-[0.8125rem]">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <Footer />
+
+  <script>
+    // Category filter logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const articles = document.querySelectorAll('[data-category]');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = (btn as HTMLElement).getAttribute('data-filter');
+
+        // Update active state
+        filterBtns.forEach(b => {
+          (b as HTMLElement).style.background = 'transparent';
+          (b as HTMLElement).style.color = 'var(--color-slate-light)';
+          (b as HTMLElement).style.borderColor = 'var(--color-border)';
+          b.classList.remove('active');
+        });
+        (btn as HTMLElement).style.background = 'var(--color-navy)';
+        (btn as HTMLElement).style.color = '#fff';
+        (btn as HTMLElement).style.borderColor = 'var(--color-navy)';
+        btn.classList.add('active');
+
+        // Filter articles
+        articles.forEach(article => {
+          const cat = (article as HTMLElement).getAttribute('data-category');
+          if (filter === 'all' || cat === filter) {
+            (article as HTMLElement).style.display = '';
+          } else {
+            (article as HTMLElement).style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</Layout>

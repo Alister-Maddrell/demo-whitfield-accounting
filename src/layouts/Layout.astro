@@ -1,0 +1,101 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Strategic Accounting for Growing Sydney Businesses — Tax planning, business advisory, and bookkeeping services trusted by 200+ Sydney businesses since 2008.' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{title} | Whitfield & Associates</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body class="antialiased">
+  <slot />
+
+  <script>
+    // Scroll-triggered reveal animations (IntersectionObserver)
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+
+    document.querySelectorAll('.reveal, .reveal-fade, .reveal-scale').forEach(el => revealObserver.observe(el));
+
+    // Navbar — frosted glass + scroll shadow
+    const nav = document.getElementById('main-nav');
+    if (nav) {
+      let lastScroll = 0;
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        if (y > 20) {
+          nav.classList.add('nav-scrolled');
+        } else {
+          nav.classList.remove('nav-scrolled');
+        }
+        lastScroll = y;
+      }, { passive: true });
+    }
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.contains('max-h-96');
+        if (isOpen) {
+          mobileMenu.classList.remove('max-h-96', 'opacity-100');
+          mobileMenu.classList.add('max-h-0', 'opacity-0');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        } else {
+          mobileMenu.classList.remove('max-h-0', 'opacity-0');
+          mobileMenu.classList.add('max-h-96', 'opacity-100');
+          menuBtn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    }
+
+    // Counter animation — refined easing
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target as HTMLElement;
+          const target = el.getAttribute('data-target') || '0';
+          const prefix = el.getAttribute('data-prefix') || '';
+          const suffix = el.getAttribute('data-suffix') || '';
+          const numericTarget = parseInt(target.replace(/[^0-9]/g, ''));
+          const duration = 2200;
+          const startTime = performance.now();
+
+          function animate(currentTime: number) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Smooth ease-out-quart
+            const eased = 1 - Math.pow(1 - progress, 4);
+            const current = Math.floor(eased * numericTarget);
+            el.textContent = prefix + current.toLocaleString() + suffix;
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            } else {
+              el.textContent = prefix + numericTarget.toLocaleString() + suffix;
+            }
+          }
+          requestAnimationFrame(animate);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('[data-counter]').forEach(el => counterObserver.observe(el));
+  </script>
+</body>
+</html>

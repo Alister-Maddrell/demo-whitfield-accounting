@@ -1,0 +1,327 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const services = [
+  {
+    title: 'Tax Planning & Compliance',
+    description: 'Proactive tax strategies that minimise your liability and keep you compliant. Individual, company, trust, and SMSF returns.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
+    num: '01',
+  },
+  {
+    title: 'Business Advisory',
+    description: 'Strategic guidance for business growth, structuring, succession planning, and financial forecasting.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>`,
+    num: '02',
+  },
+  {
+    title: 'Bookkeeping & Payroll',
+    description: 'Accurate, timely bookkeeping and payroll processing. Xero, MYOB, and QuickBooks certified.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
+    num: '03',
+  },
+  {
+    title: 'Self-Managed Super Funds',
+    description: 'SMSF setup, administration, compliance, and investment strategy for funds of all sizes.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>`,
+    num: '04',
+  },
+];
+
+const stats = [
+  { value: '200', suffix: '+', label: 'Businesses Served', desc: 'From sole traders to mid-market companies across every industry.' },
+  { value: '15', suffix: '+', label: 'Years Experience', desc: "Deep expertise built over more than a decade in Sydney\u2019s business landscape." },
+  { value: '50', prefix: '$', suffix: 'M+', label: 'Tax Saved for Clients', desc: "Proactive strategies that put real money back into our clients\u2019 businesses." },
+  { value: '98', suffix: '%', label: 'Client Retention Rate', desc: 'Our clients stay because we deliver results, year after year.' },
+];
+
+const testimonials = [
+  {
+    quote: 'Whitfield & Associates transformed how we think about tax. Their proactive approach saved us over $80,000 in the first year alone.',
+    name: 'Rebecca Chen',
+    title: 'Director, Lumina Design Studio',
+  },
+  {
+    quote: "We\u2019ve worked with three accounting firms before finding Whitfield. The difference is night and day \u2014 they actually understand our business.",
+    name: 'Mark Davidson',
+    title: 'CEO, Davidson Construction Group',
+  },
+  {
+    quote: 'Setting up our SMSF felt overwhelming until we spoke with the team. They made the entire process simple and transparent.',
+    name: 'Dr. Priya Sharma',
+    title: 'Orthopaedic Surgeon',
+  },
+];
+
+const articles = [
+  {
+    category: 'Tax',
+    title: '5 Tax Deductions Sydney Businesses Miss Every Year',
+    excerpt: 'Most business owners claim the obvious deductions but overlook several legitimate strategies that could save thousands.',
+    date: '12 February 2026',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=500&fit=crop',
+    alt: 'Financial charts and data analysis on a desk with calculator',
+  },
+  {
+    category: 'Business',
+    title: 'Is Your Business Structure Costing You Money?',
+    excerpt: 'The difference between operating as a sole trader, company, or trust can mean tens of thousands in tax each year.',
+    date: '28 January 2026',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=500&fit=crop',
+    alt: 'Business professionals collaborating in a modern meeting room',
+  },
+  {
+    category: 'Super',
+    title: 'SMSF Property Investment: What You Need to Know in 2026',
+    excerpt: "The rules around property investment through self-managed super funds have changed. Here\u2019s what matters.",
+    date: '15 January 2026',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=500&fit=crop',
+    alt: 'Modern glass office building reflecting the Sydney skyline',
+  },
+];
+---
+
+<Layout title="Home">
+  <Navbar />
+
+  <!-- ============================================
+       HERO — Spacious, confident, editorial
+       ============================================ -->
+  <section class="relative pt-36 pb-24 md:pt-48 md:pb-36 lg:pt-56 lg:pb-44 overflow-hidden">
+    <!-- Background: subtle warm gradient -->
+    <div class="absolute inset-0" style="background: linear-gradient(170deg, #FFFFFF 0%, #F8F7F4 40%, #F3F1EC 100%);"></div>
+    <!-- Subtle city texture at very low opacity -->
+    <div class="absolute inset-0 opacity-[0.025]" style="background-image: url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1600&h=900&fit=crop'); background-size: cover; background-position: center bottom;"></div>
+    <!-- Decorative accent -->
+    <div class="absolute top-0 right-0 w-1/3 h-full opacity-[0.03]" style="background: linear-gradient(180deg, var(--color-gold) 0%, transparent 60%);"></div>
+
+    <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
+      <div class="max-w-[680px]">
+        <!-- Overline -->
+        <div class="section-overline mb-6 reveal">
+          Established 2008
+        </div>
+
+        <h1 class="reveal stagger-1 font-semibold" style="color: var(--color-navy); font-family: var(--font-heading);">
+          Strategic Accounting<br class="hidden sm:block"> for Growing Sydney<br class="hidden sm:block"> Businesses
+        </h1>
+
+        <p class="mt-7 text-[1.0625rem] md:text-[1.125rem] leading-[1.75] max-w-[540px] reveal stagger-2" style="color: var(--color-text-secondary); font-family: var(--font-body);">
+          Tax planning, business advisory, and bookkeeping services trusted by 200+ Sydney businesses since 2008.
+        </p>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-4 reveal stagger-3">
+          <a href="/contact" class="btn-primary">
+            Book a Consultation
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#services" class="btn-outline">Our Services</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom fade to white -->
+    <div class="absolute bottom-0 left-0 right-0 h-24" style="background: linear-gradient(180deg, transparent, var(--color-bg-primary));"></div>
+  </section>
+
+  <!-- ============================================
+       SERVICES — Clean grid with numbering
+       ============================================ -->
+  <section id="services" class="py-24 md:py-32 lg:py-40" style="background: var(--color-bg-primary);">
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <div class="text-center mb-16 md:mb-20">
+        <div class="section-overline justify-center mb-5 reveal">How We Help</div>
+        <h2 class="reveal stagger-1 gold-underline gold-underline-center inline-block" style="color: var(--color-navy); font-family: var(--font-heading);">
+          Services Built Around<br class="hidden sm:block"> Your Business
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        {services.map((service, i) => (
+          <div class={`reveal stagger-${i + 1} card group p-7 lg:p-8`}>
+            <!-- Number + icon row -->
+            <div class="flex items-start justify-between mb-6">
+              <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: var(--color-gold-subtle); color: var(--color-gold);" set:html={service.icon} />
+              <span class="text-[0.6875rem] font-semibold tracking-[0.1em]" style="color: var(--color-border); font-family: var(--font-body);">{service.num}</span>
+            </div>
+            <h3 class="text-[1.1rem] font-semibold mb-3" style="font-family: var(--font-heading); color: var(--color-navy);">{service.title}</h3>
+            <p class="text-[0.875rem] leading-[1.7] mb-5" style="color: var(--color-text-secondary);">{service.description}</p>
+            <a href="/contact" class="link-hover inline-flex items-center gap-2 text-[0.8125rem] font-semibold no-underline transition-all duration-300" style="color: var(--color-gold);">
+              Learn More
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="divider max-w-[1280px] mx-auto"></div>
+
+  <!-- ============================================
+       WHY CHOOSE US — Stats with visual weight
+       ============================================ -->
+  <section class="relative py-24 md:py-32 lg:py-40 bg-texture" style="background: var(--color-bg-secondary);">
+    <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
+      <div class="text-center mb-16 md:mb-20">
+        <div class="section-overline justify-center mb-5 reveal">Why Choose Us</div>
+        <h2 class="reveal stagger-1 gold-underline gold-underline-center inline-block" style="color: var(--color-navy); font-family: var(--font-heading);">
+          Why Sydney Businesses<br class="hidden sm:block"> Trust Us
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        {stats.map((stat, i) => (
+          <div class={`reveal stagger-${i + 1} text-center p-6 md:p-8 rounded-md`} style="background: var(--color-bg-primary); box-shadow: var(--shadow-sm);">
+            <div
+              class="text-[2.25rem] md:text-[2.75rem] font-bold mb-1 tracking-[-0.02em]"
+              style="color: var(--color-gold); font-family: var(--font-heading);"
+              data-counter
+              data-target={stat.value}
+              data-prefix={stat.prefix || ''}
+              data-suffix={stat.suffix}
+            >
+              0
+            </div>
+            <h3 class="text-[0.8125rem] md:text-[0.875rem] font-semibold mb-2 tracking-[-0.01em]" style="color: var(--color-navy); font-family: var(--font-heading);">{stat.label}</h3>
+            <p class="text-[0.75rem] md:text-[0.8125rem] leading-[1.6] hidden md:block" style="color: var(--color-text-secondary);">{stat.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       TRUSTED BY — Subtle logo placeholders
+       ============================================ -->
+  <section class="py-16 md:py-20" style="background: var(--color-bg-primary);">
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <p class="text-center text-[0.6875rem] font-semibold uppercase tracking-[0.14em] mb-10 reveal" style="color: var(--color-text-tertiary);">
+        Trusted by leading Sydney businesses
+      </p>
+      <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 reveal-fade">
+        {[1,2,3,4,5,6].map((n) => (
+          <div class="w-24 h-10 md:w-32 md:h-12 rounded flex items-center justify-center opacity-40 hover:opacity-60 transition-opacity duration-300" style="background: var(--color-bg-secondary);">
+            <div class="w-14 h-3 md:w-20 md:h-3.5 rounded-sm" style="background: var(--color-border);"></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       TESTIMONIALS — Editorial pull-quote design
+       ============================================ -->
+  <section class="relative py-24 md:py-32 lg:py-40" style="background: var(--color-bg-primary);">
+    <!-- Subtle top divider -->
+    <div class="absolute top-0 left-0 right-0 divider"></div>
+
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <div class="text-center mb-16 md:mb-20">
+        <div class="section-overline justify-center mb-5 reveal">Testimonials</div>
+        <h2 class="reveal stagger-1 gold-underline gold-underline-center inline-block" style="color: var(--color-navy); font-family: var(--font-heading);">
+          What Our Clients Say
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-testimonials>
+        {testimonials.map((t, i) => (
+          <div class={`reveal stagger-${i + 1} relative p-8 md:p-9 rounded-md`} style="background: var(--color-bg-secondary); border: 1px solid var(--color-border-subtle);">
+            <!-- Large decorative quote -->
+            <span class="absolute top-5 left-7 text-[4.5rem] leading-none select-none pointer-events-none" style="color: var(--color-gold); opacity: 0.1; font-family: var(--font-heading);">&ldquo;</span>
+
+            <blockquote class="relative z-10 pt-10">
+              <p class="text-[0.9375rem] leading-[1.8] mb-7" style="color: var(--color-text-primary); font-style: italic; font-family: var(--font-body);">
+                &ldquo;{t.quote}&rdquo;
+              </p>
+              <!-- Attribution with gold accent line -->
+              <footer class="flex items-center gap-3">
+                <div class="w-8 h-[1px]" style="background: var(--color-gold);"></div>
+                <div>
+                  <p class="text-[0.8125rem] font-semibold" style="color: var(--color-navy);">{t.name}</p>
+                  <p class="text-[0.75rem]" style="color: var(--color-text-secondary);">{t.title}</p>
+                </div>
+              </footer>
+            </blockquote>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       LATEST INSIGHTS — Magazine-style cards
+       ============================================ -->
+  <section class="relative py-24 md:py-32 lg:py-40 bg-texture" style="background: var(--color-bg-secondary);">
+    <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-20 gap-4">
+        <div>
+          <div class="section-overline mb-5 reveal">From Our Blog</div>
+          <h2 class="reveal stagger-1 gold-underline inline-block" style="color: var(--color-navy); font-family: var(--font-heading);">
+            Latest Insights
+          </h2>
+        </div>
+        <a href="/insights" class="reveal link-hover inline-flex items-center gap-2 text-[0.8125rem] font-semibold no-underline transition-all duration-300" style="color: var(--color-gold);">
+          View All Insights
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {articles.map((article, i) => (
+          <article class={`reveal stagger-${i + 1} card group overflow-hidden`}>
+            <div class="aspect-[16/10] overflow-hidden">
+              <img src={article.image} alt={article.alt} class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-[1.04]" loading="lazy" />
+            </div>
+            <div class="p-6 md:p-7">
+              <span class="inline-block text-[0.625rem] font-semibold uppercase tracking-[0.12em] px-3 py-[5px] rounded-sm mb-4" style={`background: ${article.category === 'Tax' ? 'var(--color-gold-subtle)' : article.category === 'Business' ? 'rgba(27,43,75,0.05)' : 'rgba(74,85,104,0.06)'}; color: ${article.category === 'Tax' ? 'var(--color-gold)' : article.category === 'Business' ? 'var(--color-navy)' : 'var(--color-slate)'};`}>
+                {article.category}
+              </span>
+              <h3 class="text-[1.05rem] font-semibold mb-2.5 leading-[1.35]" style="font-family: var(--font-heading); color: var(--color-navy);">{article.title}</h3>
+              <p class="text-[0.8125rem] mb-5 line-clamp-2 leading-[1.7]" style="color: var(--color-text-secondary);">{article.excerpt}</p>
+              <div class="flex items-center justify-between pt-4" style="border-top: 1px solid var(--color-border-subtle);">
+                <span class="text-[0.6875rem] tracking-[0.01em]" style="color: var(--color-text-tertiary);">{article.date}</span>
+                <a href="/insights" class="link-hover inline-flex items-center gap-1.5 text-[0.8125rem] font-semibold no-underline" style="color: var(--color-gold);">
+                  Read
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CTA — Confident, dark, with accent border
+       ============================================ -->
+  <section class="relative py-24 md:py-32 overflow-hidden" style="background: var(--color-navy-deep);">
+    <!-- Subtle texture -->
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1600&h=900&fit=crop'); background-size: cover; background-position: center;"></div>
+    <!-- Gold top accent -->
+    <div class="absolute top-0 left-0 right-0 h-[1px]" style="background: linear-gradient(90deg, transparent, var(--color-gold), transparent);"></div>
+
+    <div class="relative max-w-[640px] mx-auto px-6 lg:px-10 text-center">
+      <div class="section-overline justify-center mb-6 reveal" style="color: var(--color-gold-light);">Get Started</div>
+      <h2 class="text-white mb-5 reveal stagger-1" style="font-family: var(--font-heading);">
+        Ready to Take Control<br class="hidden sm:block"> of Your Finances?
+      </h2>
+      <p class="text-[1rem] leading-[1.75] mb-10 reveal stagger-2" style="color: rgba(160, 172, 192, 0.8);">
+        Book a free 30-minute consultation with one of our partners. No obligation, no jargon &mdash; just clear advice.
+      </p>
+      <div class="reveal stagger-3">
+        <a href="/contact" class="inline-flex items-center justify-center gap-2.5 px-9 py-4 text-[0.875rem] font-semibold tracking-[0.02em] rounded-[3px] no-underline transition-all duration-400" style="background: var(--color-gold); color: #fff; box-shadow: var(--shadow-gold);" onmouseover="this.style.background='var(--color-gold-hover)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='var(--color-gold)';this.style.transform='translateY(0)'">
+          Book Your Free Consultation
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

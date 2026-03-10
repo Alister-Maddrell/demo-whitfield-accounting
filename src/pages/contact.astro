@@ -1,0 +1,278 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const partners = [
+  {
+    name: 'James Whitfield',
+    title: 'Managing Partner',
+    quals: 'B.Com, CPA, CTA',
+    specialty: 'Specialises in business structuring, M&A advisory, and high-net-worth tax strategy.',
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop',
+    alt: 'James Whitfield, Managing Partner, wearing a dark business suit in a professional portrait',
+  },
+  {
+    name: 'Catherine Nguyen',
+    title: 'Partner, Tax',
+    quals: 'B.Bus, CA, CTA',
+    specialty: 'Leads our tax compliance and planning practice. Expert in trust and SMSF taxation.',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop',
+    alt: 'Catherine Nguyen, Partner, wearing professional business attire in a corporate portrait',
+  },
+  {
+    name: 'Daniel Morrison',
+    title: 'Partner, Advisory',
+    quals: 'MBA, CPA',
+    specialty: 'Focused on business growth strategy, cash flow optimisation, and financial forecasting.',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop',
+    alt: 'Daniel Morrison, Partner, in a professional business portrait with neutral background',
+  },
+];
+
+const memberships = [
+  'CPA Australia',
+  'Chartered Accountants Australia & New Zealand',
+  'Tax Practitioners Board',
+  'Xero Certified Partner',
+  'MYOB Partner',
+];
+---
+
+<Layout title="Contact" description="Book a consultation with Whitfield & Associates. Tax planning, business advisory, and bookkeeping services in Sydney.">
+  <Navbar />
+
+  <!-- PAGE HEADER -->
+  <section class="relative pt-36 pb-14 md:pt-44 md:pb-20" style="background: var(--color-bg-secondary);">
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <div class="section-overline mb-5 reveal">Get In Touch</div>
+      <h1 class="reveal stagger-1 max-w-xl" style="color: var(--color-navy); font-family: var(--font-heading);">
+        Book a Consultation
+      </h1>
+      <p class="mt-5 text-[1.0625rem] leading-[1.75] max-w-lg reveal stagger-2" style="color: var(--color-text-secondary);">
+        Whether you&rsquo;re looking for a new accountant, need specific tax advice, or want to discuss your business strategy &mdash; we&rsquo;re here to help.
+      </p>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-12" style="background: linear-gradient(180deg, transparent, var(--color-bg-primary));"></div>
+  </section>
+
+  <!-- FORM + TEAM -->
+  <section class="py-16 md:py-24" style="background: var(--color-bg-primary);">
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <!-- LEFT: Form (7 cols) -->
+        <div class="lg:col-span-7 reveal">
+          <form action="https://formspree.io/f/placeholder" method="POST" id="contact-form" class="space-y-7">
+            <!-- Two-col row: Name + Email -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-[0.8125rem] font-semibold mb-2.5 tracking-[0.01em]" style="color: var(--color-navy);">Full Name <span style="color: var(--color-gold);">*</span></label>
+                <input type="text" id="name" name="name" required placeholder="Your full name" class="w-full px-4 py-3.5 text-[0.875rem] border rounded-[3px] transition-all duration-300" style="border-color: var(--color-border); color: var(--color-text-primary);" />
+              </div>
+              <div>
+                <label for="email" class="block text-[0.8125rem] font-semibold mb-2.5 tracking-[0.01em]" style="color: var(--color-navy);">Email <span style="color: var(--color-gold);">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="you@company.com" class="w-full px-4 py-3.5 text-[0.875rem] border rounded-[3px] transition-all duration-300" style="border-color: var(--color-border); color: var(--color-text-primary);" />
+              </div>
+            </div>
+
+            <!-- Two-col: Phone + Business -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="phone" class="block text-[0.8125rem] font-semibold mb-2.5 tracking-[0.01em]" style="color: var(--color-navy);">Phone <span style="color: var(--color-gold);">*</span></label>
+                <input type="tel" id="phone" name="phone" required placeholder="04XX XXX XXX" class="w-full px-4 py-3.5 text-[0.875rem] border rounded-[3px] transition-all duration-300" style="border-color: var(--color-border); color: var(--color-text-primary);" />
+              </div>
+              <div>
+                <label for="business" class="block text-[0.8125rem] font-semibold mb-2.5 tracking-[0.01em]" style="color: var(--color-navy);">Business Name <span class="text-[0.6875rem] font-normal" style="color: var(--color-text-tertiary);">(optional)</span></label>
+                <input type="text" id="business" name="business" placeholder="Your business name" class="w-full px-4 py-3.5 text-[0.875rem] border rounded-[3px] transition-all duration-300" style="border-color: var(--color-border); color: var(--color-text-primary);" />
+              </div>
+            </div>
+
+            <!-- Service Interest -->
+            <div>
+              <label for="service" class="block text-[0.8125rem] font-semibold mb-2.5 tracking-[0.01em]" style="color: var(--color-navy);">Service Interest <span style="color: var(--color-gold);">*</span></label>
+              <select id="service" name="service" required class="w-full px-4 py-3.5 text-[0.875rem] border rounded-[3px] transition-all duration-300 bg-white appearance-none" style="border-color: var(--color-border); color: var(--color-text-primary); background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%234A5568%22 stroke-width=%222%22><polyline points=%226 9 12 15 18 9%22/></svg>'); background-repeat: no-repeat; background-position: right 16px center;">
+                <option value="">Select a service...</option>
+                <option value="Tax Planning & Compliance">Tax Planning & Compliance</option>
+                <option value="Business Advisory">Business Advisory</option>
+                <option value="Bookkeeping & Payroll">Bookkeeping & Payroll</option>
+                <option value="Self-Managed Super Fund">Self-Managed Super Fund</option>
+                <option value="Not Sure / General Enquiry">Not Sure / General Enquiry</option>
+              </select>
+            </div>
+
+            <!-- Preferred Contact Method -->
+            <div>
+              <label class="block text-[0.8125rem] font-semibold mb-3 tracking-[0.01em]" style="color: var(--color-navy);">Preferred Contact Method</label>
+              <div class="flex flex-wrap gap-6">
+                {['Phone', 'Email', 'Either'].map((method, i) => (
+                  <label class="flex items-center gap-2.5 cursor-pointer text-[0.875rem]" style="color: var(--color-text-primary);">
+                    <input type="radio" name="contact_method" value={method} checked={i === 2} />
+                    {method}
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            <!-- Preferred Day + Time -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="day" class="block text-[0.8125rem] font-semibold mb-2.5 tracking-[0.01em]" style="color: var(--color-navy);">Preferred Day</label>
+                <select id="day" name="preferred_day" class="w-full px-4 py-3.5 text-[0.875rem] border rounded-[3px] transition-all duration-300 bg-white appearance-none" style="border-color: var(--color-border); color: var(--color-text-primary); background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%234A5568%22 stroke-width=%222%22><polyline points=%226 9 12 15 18 9%22/></svg>'); background-repeat: no-repeat; background-position: right 16px center;">
+                  <option value="No Preference">No Preference</option>
+                  <option value="Monday">Monday</option>
+                  <option value="Tuesday">Tuesday</option>
+                  <option value="Wednesday">Wednesday</option>
+                  <option value="Thursday">Thursday</option>
+                  <option value="Friday">Friday</option>
+                </select>
+              </div>
+              <div>
+                <label for="time" class="block text-[0.8125rem] font-semibold mb-2.5 tracking-[0.01em]" style="color: var(--color-navy);">Preferred Time</label>
+                <select id="time" name="preferred_time" class="w-full px-4 py-3.5 text-[0.875rem] border rounded-[3px] transition-all duration-300 bg-white appearance-none" style="border-color: var(--color-border); color: var(--color-text-primary); background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%234A5568%22 stroke-width=%222%22><polyline points=%226 9 12 15 18 9%22/></svg>'); background-repeat: no-repeat; background-position: right 16px center;">
+                  <option value="No Preference">No Preference</option>
+                  <option value="Morning (8:30-12)">Morning (8:30&ndash;12)</option>
+                  <option value="Afternoon (12-5:30)">Afternoon (12&ndash;5:30)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label for="message" class="block text-[0.8125rem] font-semibold mb-2.5 tracking-[0.01em]" style="color: var(--color-navy);">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell us about your situation and how we can help..." class="w-full px-4 py-3.5 text-[0.875rem] border rounded-[3px] transition-all duration-300 resize-y" style="border-color: var(--color-border); color: var(--color-text-primary);"></textarea>
+            </div>
+
+            <!-- Submit -->
+            <div class="pt-2">
+              <button type="submit" class="btn-primary">
+                Request Consultation
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+
+            <!-- Success message -->
+            <div id="form-success" class="hidden p-5 rounded-[3px] text-[0.875rem] font-medium" style="background: var(--color-gold-subtle); color: var(--color-navy); border: 1px solid rgba(184,146,74,0.15);">
+              <strong>Thank you for your enquiry.</strong> We&rsquo;ll be in touch within one business day.
+            </div>
+          </form>
+        </div>
+
+        <!-- RIGHT: Team (5 cols) -->
+        <div class="lg:col-span-5 reveal stagger-2">
+          <div class="lg:sticky lg:top-[100px]">
+            <div class="section-overline mb-5">Our Team</div>
+            <h2 class="gold-underline inline-block mb-10" style="color: var(--color-navy); font-family: var(--font-heading); font-size: clamp(1.5rem, 2vw + 0.8rem, 2.2rem);">
+              Meet Our Partners
+            </h2>
+
+            <div class="space-y-6">
+              {partners.map((partner, i) => (
+                <div class={`card group flex gap-5 items-start p-5 stagger-${i + 2}`}>
+                  <div class="w-[88px] h-[104px] flex-shrink-0 rounded-[4px] overflow-hidden" style="box-shadow: var(--shadow-sm);">
+                    <img src={partner.image} alt={partner.alt} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                  </div>
+                  <div class="pt-0.5">
+                    <h3 class="text-[0.9375rem] font-semibold leading-tight" style="font-family: var(--font-heading); color: var(--color-navy);">{partner.name}</h3>
+                    <p class="text-[0.75rem] font-semibold mt-0.5" style="color: var(--color-gold);">{partner.title}</p>
+                    <p class="text-[0.6875rem] mt-1 tracking-[0.01em]" style="color: var(--color-text-tertiary);">{partner.quals}</p>
+                    <p class="text-[0.8125rem] mt-2.5 leading-[1.6]" style="color: var(--color-text-secondary);">{partner.specialty}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFICE DETAILS + MAP -->
+  <section class="relative py-16 md:py-24 bg-texture" style="background: var(--color-bg-secondary);">
+    <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <!-- Details -->
+        <div class="reveal">
+          <div class="section-overline mb-5">Our Office</div>
+          <h2 class="gold-underline inline-block mb-8" style="color: var(--color-navy); font-family: var(--font-heading); font-size: clamp(1.5rem, 2vw + 0.8rem, 2.2rem);">
+            Visit Us
+          </h2>
+          <div class="space-y-5">
+            {[
+              { label: 'Address', value: 'Level 12, 60 Castlereagh Street<br>Sydney NSW 2000', href: null },
+              { label: 'Phone', value: '02 9555 7800', href: 'tel:0295557800' },
+              { label: 'Email', value: 'enquiries@whitfieldassociates.com.au', href: 'mailto:enquiries@whitfieldassociates.com.au' },
+              { label: 'Hours', value: 'Monday \u2013 Friday, 8:30am \u2013 5:30pm', href: null },
+            ].map(item => (
+              <div class="flex gap-4">
+                <span class="text-[0.75rem] font-semibold uppercase tracking-[0.1em] w-16 flex-shrink-0 pt-0.5" style="color: var(--color-text-tertiary);">{item.label}</span>
+                <div class="text-[0.875rem] leading-[1.6]" style="color: var(--color-text-primary);">
+                  {item.href ? (
+                    <a href={item.href} class="link-hover no-underline transition-colors duration-300" style="color: var(--color-gold);">{item.value}</a>
+                  ) : (
+                    <span set:html={item.value}></span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+          <p class="mt-6 text-[0.8125rem] leading-[1.7] pl-20" style="color: var(--color-text-tertiary);">
+            Located on Level 12. Enter via the main lobby on Castlereagh Street. Visitor parking available at the Piccadilly Centre car park.
+          </p>
+        </div>
+
+        <!-- Map -->
+        <div class="reveal stagger-2 rounded-md overflow-hidden" style="box-shadow: var(--shadow-md);">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.8!2d151.2085!3d-33.871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae3f3f3f3f3f%3A0x0!2s60+Castlereagh+St%2C+Sydney+NSW+2000!5e0!3m2!1sen!2sau!4v1700000000000!5m2!1sen!2sau"
+            width="100%"
+            height="380"
+            style="border:0;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Whitfield & Associates office location at 60 Castlereagh Street, Sydney"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFESSIONAL MEMBERSHIPS -->
+  <section class="py-12 md:py-16" style="background: var(--color-bg-primary);">
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+      <div class="flex flex-wrap justify-center gap-3 md:gap-4 reveal">
+        {memberships.map(m => (
+          <span class="px-5 py-2.5 text-[0.6875rem] font-medium tracking-[0.02em] rounded-sm border transition-colors duration-300 hover:border-current" style="border-color: var(--color-border); color: var(--color-text-tertiary);">
+            {m}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+
+  <script>
+    // Form submission handler
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    const successMsg = document.getElementById('form-success');
+
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        if (successMsg) {
+          successMsg.classList.remove('hidden');
+          form.reset();
+          successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      });
+    }
+  </script>
+</Layout>
