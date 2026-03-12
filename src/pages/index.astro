@@ -99,24 +99,24 @@ const articles = [
     <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
       <div class="max-w-[680px]">
         <!-- Overline -->
-        <div class="section-overline mb-6 reveal" style="color: var(--color-gold-light);">
+        <div class="section-overline mb-6 reveal" style="color: #D4B978;">
           Established 2008
         </div>
 
-        <h1 class="reveal stagger-1 font-semibold text-white" style="font-family: var(--font-heading);">
+        <h1 class="reveal stagger-1 font-semibold" style="color: #FFFFFF; font-family: var(--font-heading);">
           Strategic Accounting<br class="hidden sm:block"> for Growing Sydney<br class="hidden sm:block"> Businesses
         </h1>
 
-        <p class="mt-7 text-[1.0625rem] md:text-[1.125rem] leading-[1.75] max-w-[540px] reveal stagger-2 text-white/80" style="font-family: var(--font-body);">
+        <p class="mt-7 text-[1.0625rem] md:text-[1.125rem] leading-[1.75] max-w-[540px] reveal stagger-2" style="color: rgba(255,255,255,0.85); font-family: var(--font-body);">
           Tax planning, business advisory, and bookkeeping services trusted by 200+ Sydney businesses since 2008.
         </p>
 
         <div class="mt-10 flex flex-col sm:flex-row gap-4 reveal stagger-3">
-          <a href="/contact" class="inline-flex items-center justify-center gap-2.5 px-8 py-4 text-[0.875rem] font-semibold tracking-[0.02em] rounded-[3px] no-underline transition-all duration-300 bg-white text-navy-deep hover:bg-white/90">
+          <a href="/contact" class="inline-flex items-center justify-center gap-2.5 px-8 py-4 text-[0.875rem] font-semibold tracking-[0.02em] rounded-[3px] no-underline transition-all duration-300 hover:opacity-90" style="background: #FFFFFF; color: #0F1D33;">
             Book a Consultation
             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
-          <a href="#services" class="inline-flex items-center justify-center px-8 py-4 text-[0.875rem] font-semibold tracking-[0.02em] rounded-[3px] no-underline transition-all duration-300 border-2 border-white text-white hover:bg-white/10">Our Services</a>
+          <a href="#services" class="inline-flex items-center justify-center px-8 py-4 text-[0.875rem] font-semibold tracking-[0.02em] rounded-[3px] no-underline transition-all duration-300 hover:bg-white/10" style="border: 2px solid #FFFFFF; color: #FFFFFF;">Our Services</a>
         </div>
       </div>
     </div>
@@ -207,25 +207,13 @@ const articles = [
       <p class="text-center text-[0.6875rem] font-semibold uppercase tracking-[0.14em] mb-10 reveal" style="color: var(--color-text-tertiary);">
         Trusted by leading Sydney businesses
       </p>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 md:gap-8 max-w-5xl mx-auto items-center reveal-fade">
-        <div class="flex items-center justify-center py-3 cursor-default group">
-          <span class="text-[0.75rem] md:text-[0.8125rem] font-bold uppercase tracking-[0.08em] text-[#9CA3AF] group-hover:text-[#374151] transition-colors duration-300" style="font-family: system-ui, sans-serif;">Harbour Construction Group</span>
-        </div>
-        <div class="flex items-center justify-center py-3 cursor-default group">
-          <span class="text-[0.85rem] md:text-[0.9375rem] font-light italic text-[#9CA3AF] group-hover:text-[#374151] transition-colors duration-300" style="font-family: var(--font-heading);">Meridian Property</span>
-        </div>
-        <div class="flex items-center justify-center py-3 cursor-default group">
-          <span class="text-[0.8rem] md:text-[0.875rem] font-medium text-[#9CA3AF] group-hover:text-[#374151] transition-colors duration-300" style="font-family: 'Source Sans 3', system-ui, sans-serif; letter-spacing: 0.01em;">Coastal Dining Co</span>
-        </div>
-        <div class="flex items-center justify-center py-3 cursor-default group">
-          <span class="text-[0.7rem] md:text-[0.78rem] font-bold uppercase tracking-[0.04em] text-[#9CA3AF] group-hover:text-[#374151] transition-colors duration-300" style="font-family: system-ui, -apple-system, sans-serif; font-stretch: condensed;">TechBridge Solutions</span>
-        </div>
-        <div class="flex items-center justify-center py-3 cursor-default group">
-          <span class="text-[0.8rem] md:text-[0.875rem] font-normal text-[#9CA3AF] group-hover:text-[#374151] transition-colors duration-300" style="font-family: var(--font-heading); letter-spacing: 0.02em;">Greenfield Medical</span>
-        </div>
-        <div class="flex items-center justify-center py-3 cursor-default group">
-          <span class="text-[0.78rem] md:text-[0.85rem] font-semibold text-[#9CA3AF] group-hover:text-[#374151] transition-colors duration-300" style="font-family: var(--font-heading); letter-spacing: 0.03em; font-variant: small-caps;">Atlas Legal Partners</span>
-        </div>
+      <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-4 md:gap-x-14 max-w-4xl mx-auto reveal-fade">
+        <span class="whitespace-nowrap text-[0.8rem] font-bold uppercase tracking-[0.1em] cursor-default transition-colors duration-300" style="color: #9CA3AF; font-family: system-ui, sans-serif;" onmouseover="this.style.color='#1A1A2E'" onmouseout="this.style.color='#9CA3AF'">Harbour Construction</span>
+        <span class="whitespace-nowrap text-[0.95rem] font-light italic cursor-default transition-colors duration-300" style="color: #9CA3AF; font-family: var(--font-heading);" onmouseover="this.style.color='#1A1A2E'" onmouseout="this.style.color='#9CA3AF'">Meridian Property</span>
+        <span class="whitespace-nowrap text-[0.85rem] font-medium cursor-default transition-colors duration-300" style="color: #9CA3AF; font-family: var(--font-body); letter-spacing: 0.02em;" onmouseover="this.style.color='#1A1A2E'" onmouseout="this.style.color='#9CA3AF'">Coastal Dining Co</span>
+        <span class="whitespace-nowrap text-[0.75rem] font-bold uppercase tracking-[0.06em] cursor-default transition-colors duration-300" style="color: #9CA3AF; font-family: system-ui, sans-serif;" onmouseover="this.style.color='#1A1A2E'" onmouseout="this.style.color='#9CA3AF'">TechBridge Solutions</span>
+        <span class="whitespace-nowrap text-[0.9rem] font-normal cursor-default transition-colors duration-300" style="color: #9CA3AF; font-family: var(--font-heading); letter-spacing: 0.02em;" onmouseover="this.style.color='#1A1A2E'" onmouseout="this.style.color='#9CA3AF'">Greenfield Medical</span>
+        <span class="whitespace-nowrap text-[0.85rem] font-semibold cursor-default transition-colors duration-300" style="color: #9CA3AF; font-family: var(--font-heading); letter-spacing: 0.05em; font-variant: small-caps;" onmouseover="this.style.color='#1A1A2E'" onmouseout="this.style.color='#9CA3AF'">Atlas Legal Partners</span>
       </div>
     </div>
   </section>
