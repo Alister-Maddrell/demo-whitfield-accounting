@@ -207,14 +207,25 @@ const articles = [
       <p class="text-center text-[0.6875rem] font-semibold uppercase tracking-[0.14em] mb-10 reveal" style="color: var(--color-text-tertiary);">
         Trusted by leading Sydney businesses
       </p>
-      <div class="grid grid-cols-3 md:grid-cols-6 gap-4 md:gap-6 max-w-4xl mx-auto reveal-fade">
-        {[1,2,3,4,5,6].map((n) => (
-          <div class="h-16 md:h-20 rounded-lg border border-[var(--color-border)] flex items-center justify-center opacity-50 hover:opacity-70 transition-all duration-300 hover:border-[var(--color-gold)] cursor-default" style="background: var(--color-bg-secondary);">
-            <div class="flex flex-col items-center gap-1.5">
-              <div class="w-8 h-8 md:w-10 md:h-10 rounded-md" style="background: var(--color-border); opacity: 0.5;"></div>
-            </div>
-          </div>
-        ))}
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 md:gap-8 max-w-5xl mx-auto items-center reveal-fade">
+        <div class="flex items-center justify-center py-3 cursor-default group">
+          <span class="text-[0.75rem] md:text-[0.8125rem] font-bold uppercase tracking-[0.08em] text-[#9CA3AF] group-hover:text-[#374151] transition-colors duration-300" style="font-family: system-ui, sans-serif;">Harbour Construction Group</span>
+        </div>
+        <div class="flex items-center justify-center py-3 cursor-default group">
+          <span class="text-[0.85rem] md:text-[0.9375rem] font-light italic text-[#9CA3AF] group-hover:text-[#374151] transition-colors duration-300" style="font-family: var(--font-heading);">Meridian Property</span>
+        </div>
+        <div class="flex items-center justify-center py-3 cursor-default group">
+          <span class="text-[0.8rem] md:text-[0.875rem] font-medium text-[#9CA3AF] group-hover:text-[#374151] transition-colors duration-300" style="font-family: 'Source Sans 3', system-ui, sans-serif; letter-spacing: 0.01em;">Coastal Dining Co</span>
+        </div>
+        <div class="flex items-center justify-center py-3 cursor-default group">
+          <span class="text-[0.7rem] md:text-[0.78rem] font-bold uppercase tracking-[0.04em] text-[#9CA3AF] group-hover:text-[#374151] transition-colors duration-300" style="font-family: system-ui, -apple-system, sans-serif; font-stretch: condensed;">TechBridge Solutions</span>
+        </div>
+        <div class="flex items-center justify-center py-3 cursor-default group">
+          <span class="text-[0.8rem] md:text-[0.875rem] font-normal text-[#9CA3AF] group-hover:text-[#374151] transition-colors duration-300" style="font-family: var(--font-heading); letter-spacing: 0.02em;">Greenfield Medical</span>
+        </div>
+        <div class="flex items-center justify-center py-3 cursor-default group">
+          <span class="text-[0.78rem] md:text-[0.85rem] font-semibold text-[#9CA3AF] group-hover:text-[#374151] transition-colors duration-300" style="font-family: var(--font-heading); letter-spacing: 0.03em; font-variant: small-caps;">Atlas Legal Partners</span>
+        </div>
       </div>
     </div>
   </section>
