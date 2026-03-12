@@ -67,26 +67,58 @@ const categories = ['All', 'Tax', 'Business', 'Superannuation'];
 <Layout title="Insights" description="Expert analysis and practical advice on tax, business strategy, and superannuation for Australian businesses.">
   <Navbar />
 
-  <!-- PAGE HEADER -->
-  <section class="relative pt-36 pb-14 md:pt-44 md:pb-20" style="background: var(--color-bg-secondary);">
-    <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
-      <div class="section-overline mb-5 reveal">Knowledge Centre</div>
+  <!-- PAGE HEADER — Rich, editorial -->
+  <section class="relative pt-36 pb-14 md:pt-44 md:pb-20 overflow-hidden" style="background: var(--color-bg-secondary);">
+    <!-- Subtle grid pattern -->
+    <div class="absolute inset-0 opacity-[0.02]" style="background-image: linear-gradient(var(--color-navy) 1px, transparent 1px), linear-gradient(90deg, var(--color-navy) 1px, transparent 1px); background-size: 60px 60px;"></div>
+    <!-- Decorative corner brackets -->
+    <div class="absolute top-24 right-10 lg:right-20 w-24 h-24 border-r-2 border-t-2 hidden lg:block" style="border-color: var(--color-gold); opacity: 0.12;"></div>
+    <!-- Large watermark text -->
+    <div class="absolute top-8 right-0 text-[10rem] lg:text-[14rem] font-bold leading-none select-none pointer-events-none hidden md:block" style="color: var(--color-border-light); font-family: var(--font-heading); opacity: 0.35;">&para;</div>
+
+    <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
+      <div class="flex items-center gap-3 mb-5 reveal">
+        <span class="w-2 h-2 rounded-full" style="background: var(--color-gold);"></span>
+        <span class="text-[0.75rem] font-semibold tracking-[0.15em] uppercase" style="color: var(--color-gold);">Knowledge Centre</span>
+      </div>
       <h1 class="reveal stagger-1 max-w-xl" style="color: var(--color-navy); font-family: var(--font-heading);">
         Insights &amp; Resources
       </h1>
-      <p class="mt-5 text-[1.0625rem] leading-[1.75] max-w-lg reveal stagger-2" style="color: var(--color-text-secondary);">
+      <!-- Gold accent bar -->
+      <div class="flex items-center gap-3 mt-5 mb-6 reveal stagger-1">
+        <div class="w-12 h-[2px]" style="background: var(--color-gold);"></div>
+        <div class="w-2 h-[2px]" style="background: var(--color-gold); opacity: 0.5;"></div>
+      </div>
+      <p class="text-[1.0625rem] leading-[1.75] max-w-lg reveal stagger-2" style="color: var(--color-text-secondary);">
         Expert analysis and practical advice on tax, business strategy, and superannuation for Australian businesses.
       </p>
+      <!-- Article count badge -->
+      <div class="mt-6 reveal stagger-3">
+        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-sm text-[0.6875rem] font-semibold tracking-[0.04em]" style="background: var(--color-gold-subtle); color: var(--color-gold); border: 1px solid rgba(184,146,74,0.12);">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          {articles.length} Articles
+        </span>
+      </div>
     </div>
     <!-- Bottom gradient -->
-    <div class="absolute bottom-0 left-0 right-0 h-12" style="background: linear-gradient(180deg, transparent, var(--color-bg-primary));"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-16" style="background: linear-gradient(180deg, transparent, var(--color-bg-primary));"></div>
   </section>
 
+  <!-- Decorative transition -->
+  <div class="flex items-center justify-center gap-3 -mt-2 relative z-10">
+    <div class="w-16 h-px" style="background: linear-gradient(90deg, transparent, var(--color-gold));"></div>
+    <div class="w-2 h-2 rotate-45" style="background: var(--color-gold);"></div>
+    <div class="w-16 h-px" style="background: linear-gradient(90deg, var(--color-gold), transparent);"></div>
+  </div>
+
   <!-- FILTER + ARTICLES -->
-  <section class="py-16 md:py-24" style="background: var(--color-bg-primary);">
+  <section class="relative py-16 md:py-24 overflow-hidden" style="background: var(--color-bg-primary);">
+    <!-- Faint vertical line -->
+    <div class="absolute top-0 left-1/2 w-px h-16 hidden lg:block" style="background: linear-gradient(180deg, var(--color-border), transparent);"></div>
+
     <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
       <!-- Category Filters -->
-      <div class="flex flex-wrap gap-2.5 mb-14" id="category-filters">
+      <div class="flex flex-wrap gap-2.5 mb-14 reveal" id="category-filters">
         {categories.map((cat, i) => (
           <button
             class={`filter-btn px-5 py-[9px] text-[0.8125rem] font-medium rounded-sm border transition-all duration-300 cursor-pointer ${i === 0 ? 'active' : ''}`}
@@ -98,22 +130,27 @@ const categories = ['All', 'Tax', 'Business', 'Superannuation'];
             {cat}
           </button>
         ))}
+        <!-- Result count -->
+        <span class="flex items-center ml-auto text-[0.6875rem] tracking-[0.02em]" style="color: var(--color-text-tertiary);" id="result-count">Showing all {articles.length} articles</span>
       </div>
 
       <!-- Article Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="articles-grid">
         {articles.map((article, i) => (
           <article
-            class={`reveal stagger-${i + 1} card group overflow-hidden`}
+            class={`reveal stagger-${Math.min(i + 1, 6)} card blog-card group overflow-hidden relative`}
             data-category={article.category}
           >
-            <div class="aspect-[16/10] overflow-hidden">
+            <div class="aspect-[16/10] overflow-hidden relative">
               <img src={article.image} alt={article.alt} class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-[1.04]" loading="lazy" />
-            </div>
-            <div class="p-6 md:p-7">
-              <span class="inline-block text-[0.625rem] font-semibold uppercase tracking-[0.12em] px-3 py-[5px] rounded-sm mb-4" style={`background: ${article.category === 'Tax' ? 'var(--color-gold-subtle)' : article.category === 'Business' ? 'rgba(27,43,75,0.05)' : 'rgba(74,85,104,0.06)'}; color: ${article.category === 'Tax' ? 'var(--color-gold)' : article.category === 'Business' ? 'var(--color-navy)' : 'var(--color-slate)'};`}>
+              <!-- Image overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+              <!-- Category badge on image -->
+              <span class="absolute top-4 left-4 text-[0.625rem] font-semibold uppercase tracking-[0.12em] px-3 py-[5px] rounded-sm" style={`background: ${article.category === 'Tax' ? 'rgba(184,146,74,0.9)' : article.category === 'Business' ? 'rgba(27,43,75,0.85)' : 'rgba(74,85,104,0.85)'}; color: #fff; backdrop-filter: blur(4px);`}>
                 {article.category}
               </span>
+            </div>
+            <div class="p-6 md:p-7">
               <h3 class="text-[1.05rem] font-semibold mb-2.5 leading-[1.35]" style="font-family: var(--font-heading); color: var(--color-navy);">{article.title}</h3>
               <p class="text-[0.8125rem] mb-5 line-clamp-3 leading-[1.7]" style="color: var(--color-text-secondary);">{article.excerpt}</p>
               <div class="flex items-center justify-between pt-4" style="border-top: 1px solid var(--color-border-subtle);">
@@ -134,13 +171,38 @@ const categories = ['All', 'Tax', 'Business', 'Superannuation'];
     </div>
   </section>
 
-  <!-- NEWSLETTER CTA -->
-  <section class="relative py-20 md:py-28 bg-texture" style="background: var(--color-bg-secondary);">
+  <!-- Decorative transition with text -->
+  <div class="relative py-6" style="background: var(--color-bg-primary);">
+    <div class="flex items-center justify-center gap-4 max-w-[1280px] mx-auto px-6">
+      <div class="flex-1 h-px" style="background: linear-gradient(90deg, transparent, var(--color-border));"></div>
+      <span class="text-[0.625rem] font-semibold uppercase tracking-[0.2em] px-4" style="color: var(--color-text-tertiary);">Stay informed</span>
+      <div class="flex-1 h-px" style="background: linear-gradient(90deg, var(--color-border), transparent);"></div>
+    </div>
+  </div>
+
+  <!-- NEWSLETTER CTA — Rich, layered -->
+  <section class="relative py-24 md:py-32 bg-texture overflow-hidden" style="background: var(--color-bg-secondary);">
+    <!-- Crosshatch pattern -->
+    <div class="absolute inset-0 opacity-[0.015]" style="background-image: linear-gradient(45deg, var(--color-navy) 1px, transparent 1px), linear-gradient(-45deg, var(--color-navy) 1px, transparent 1px); background-size: 20px 20px; pointer-events: none;"></div>
+    <!-- Decorative corner elements -->
+    <div class="absolute top-8 left-8 w-16 h-16 border-l-2 border-t-2 hidden lg:block" style="border-color: var(--color-gold); opacity: 0.12;"></div>
+    <div class="absolute bottom-8 right-8 w-16 h-16 border-r-2 border-b-2 hidden lg:block" style="border-color: var(--color-gold); opacity: 0.12;"></div>
+
     <div class="relative max-w-[560px] mx-auto px-6 lg:px-10 text-center">
-      <div class="section-overline justify-center mb-5 reveal">Newsletter</div>
+      <div class="flex items-center justify-center gap-3 mb-5 reveal">
+        <span class="w-2 h-2 rounded-full" style="background: var(--color-gold);"></span>
+        <span class="text-[0.75rem] font-semibold tracking-[0.15em] uppercase" style="color: var(--color-gold);">Newsletter</span>
+        <span class="w-2 h-2 rounded-full" style="background: var(--color-gold);"></span>
+      </div>
       <h2 class="reveal stagger-1 mb-4" style="color: var(--color-navy); font-family: var(--font-heading); font-size: clamp(1.5rem, 2vw + 0.8rem, 2.2rem);">
         Stay Informed
       </h2>
+      <!-- Gold accent bar -->
+      <div class="flex items-center justify-center gap-2 mb-6 reveal stagger-1">
+        <div class="w-6 h-[2px]" style="background: var(--color-gold); opacity: 0.5;"></div>
+        <div class="w-12 h-[2px]" style="background: var(--color-gold);"></div>
+        <div class="w-6 h-[2px]" style="background: var(--color-gold); opacity: 0.5;"></div>
+      </div>
       <p class="text-[0.9375rem] leading-[1.75] mb-9 reveal stagger-2" style="color: var(--color-text-secondary);">
         Get our latest insights delivered to your inbox monthly. No spam, just expert advice.
       </p>
@@ -155,6 +217,9 @@ const categories = ['All', 'Tax', 'Business', 'Superannuation'];
         />
         <button type="submit" class="btn-primary !py-3.5 !px-7 text-[0.8125rem]">Subscribe</button>
       </form>
+      <p class="mt-5 text-[0.6875rem] tracking-[0.02em] reveal stagger-4" style="color: var(--color-text-tertiary);">
+        Join 1,200+ business owners &middot; Unsubscribe anytime
+      </p>
     </div>
   </section>
 
@@ -181,15 +246,25 @@ const categories = ['All', 'Tax', 'Business', 'Superannuation'];
         (btn as HTMLElement).style.borderColor = 'var(--color-navy)';
         btn.classList.add('active');
 
-        // Filter articles
+        // Filter articles and count
+        let count = 0;
         articles.forEach(article => {
           const cat = (article as HTMLElement).getAttribute('data-category');
           if (filter === 'all' || cat === filter) {
             (article as HTMLElement).style.display = '';
+            count++;
           } else {
             (article as HTMLElement).style.display = 'none';
           }
         });
+
+        // Update count text
+        const countEl = document.getElementById('result-count');
+        if (countEl) {
+          countEl.textContent = filter === 'all'
+            ? `Showing all ${count} articles`
+            : `Showing ${count} ${filter} article${count !== 1 ? 's' : ''}`;
+        }
       });
     });
   </script>
