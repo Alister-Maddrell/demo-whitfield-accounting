@@ -408,6 +408,88 @@ input[type="radio"]:checked::after {
   box-shadow: 0 1px 0 rgba(27, 43, 75, 0.06), 0 4px 16px rgba(27, 43, 75, 0.04);
 }
 
+/* Fine crosshatch texture */
+.crosshatch::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.015;
+  background-image:
+    linear-gradient(45deg, var(--color-navy) 1px, transparent 1px),
+    linear-gradient(-45deg, var(--color-navy) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Large section number */
+.section-num {
+  font-family: var(--font-heading);
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-border-light);
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* Gold rule line */
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  margin: 0 auto;
+  max-width: 200px;
+}
+
+/* Enhanced blog card hover */
+.blog-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.blog-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--color-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: 10;
+}
+
+.blog-card:hover::before {
+  transform: scaleX(1);
+}
+
+.blog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Stat glow */
+.stat-glow {
+  text-shadow: 0 0 40px rgba(184, 146, 74, 0.2);
+}
+
+/* Team photo frame */
+.team-frame {
+  border: 2px solid var(--color-border);
+  padding: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.team-frame:hover {
+  border-color: var(--color-gold);
+}
+
 /* ============================================
    REDUCED MOTION
    ============================================ */
