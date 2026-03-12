@@ -49,7 +49,8 @@ html {
 body {
   font-family: var(--font-body);
   font-size: clamp(1rem, 0.15vw + 0.96rem, 1.0625rem);
-  line-height: 1.75;
+  line-height: 1.7;
+  letter-spacing: 0.005em;
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
   overflow-x: hidden;
@@ -229,27 +230,29 @@ h4 {
 /* ============================================
    CARDS — Layered shadow system
    ============================================ */
+/* Cards — subtle, refined hover. Nothing flashy. */
 .card {
   background: var(--color-bg-primary);
   border: 1px solid var(--color-border-subtle);
   border-radius: 6px;
   box-shadow: var(--shadow-sm);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .card:hover {
-  box-shadow: var(--shadow-card-hover);
-  border-color: transparent;
-  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border-light);
+  transform: translateY(-3px);
 }
 
 /* ============================================
    SCROLL-TRIGGERED ANIMATIONS — Premium easing
    ============================================ */
+/* Slow, precise reveal — understated authority (400-500ms) */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .reveal.visible {
   opacity: 1;
