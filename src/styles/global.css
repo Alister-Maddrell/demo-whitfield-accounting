@@ -474,6 +474,15 @@ input[type="radio"]:checked::after {
   box-shadow: var(--shadow-lg);
 }
 
+/* Enhanced service cards */
+.service-card-enhanced {
+  transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.service-card-enhanced:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-gold-subtle);
+}
+
 /* Stat glow */
 .stat-glow {
   text-shadow: 0 0 40px rgba(184, 146, 74, 0.2);

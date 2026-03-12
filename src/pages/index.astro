@@ -43,16 +43,19 @@ const testimonials = [
     quote: 'Whitfield & Associates transformed how we think about tax. Their proactive approach saved us over $80,000 in the first year alone.',
     name: 'Rebecca Chen',
     title: 'Director, Lumina Design Studio',
+    initials: 'RC',
   },
   {
     quote: "We\u2019ve worked with three accounting firms before finding Whitfield. The difference is night and day \u2014 they actually understand our business.",
     name: 'Mark Davidson',
     title: 'CEO, Davidson Construction Group',
+    initials: 'MD',
   },
   {
     quote: 'Setting up our SMSF felt overwhelming until we spoke with the team. They made the entire process simple and transparent.',
     name: 'Dr. Priya Sharma',
     title: 'Orthopaedic Surgeon',
+    initials: 'PS',
   },
 ];
 
@@ -62,6 +65,7 @@ const articles = [
     title: '5 Tax Deductions Sydney Businesses Miss Every Year',
     excerpt: 'Most business owners claim the obvious deductions but overlook several legitimate strategies that could save thousands.',
     date: '12 February 2026',
+    readTime: '4 min read',
     image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=500&fit=crop',
     alt: 'Financial charts and data analysis on a desk with calculator',
   },
@@ -70,6 +74,7 @@ const articles = [
     title: 'Is Your Business Structure Costing You Money?',
     excerpt: 'The difference between operating as a sole trader, company, or trust can mean tens of thousands in tax each year.',
     date: '28 January 2026',
+    readTime: '6 min read',
     image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=500&fit=crop',
     alt: 'Business professionals collaborating in a modern meeting room',
   },
@@ -78,6 +83,7 @@ const articles = [
     title: 'SMSF Property Investment: What You Need to Know in 2026',
     excerpt: "The rules around property investment through self-managed super funds have changed. Here\u2019s what matters.",
     date: '15 January 2026',
+    readTime: '5 min read',
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=500&fit=crop',
     alt: 'Modern glass office building reflecting the Sydney skyline',
   },
@@ -88,86 +94,132 @@ const articles = [
   <Navbar />
 
   <!-- ============================================
-       HERO — Spacious, confident, editorial
+       HERO — Cinematic, layered, confident
        ============================================ -->
   <section class="relative pt-36 pb-24 md:pt-48 md:pb-36 lg:pt-56 lg:pb-44 overflow-hidden">
-    <!-- Hero background image — fully visible -->
+    <!-- Hero background image -->
     <div class="absolute inset-0" style="background-image: url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1600&h=900&fit=crop'); background-size: cover; background-position: center bottom;"></div>
-    <!-- Dark overlay for text readability -->
-    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+    <!-- Multi-layer dark overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/55 to-black/25"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10"></div>
+    <!-- Subtle grain texture -->
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27n%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.9%27 numOctaves=%274%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23n)%27/%3E%3C/svg%3E'); background-size: 256px; mix-blend-mode: overlay;"></div>
+
+    <!-- Decorative corner frames -->
+    <div class="absolute top-24 right-10 lg:right-20 w-32 h-32 lg:w-48 lg:h-48 border border-white/10 rounded-sm hidden md:block"></div>
+    <div class="absolute top-28 right-14 lg:right-24 w-32 h-32 lg:w-48 lg:h-48 border border-gold/20 rounded-sm hidden md:block"></div>
+    <!-- Vertical gold accent line -->
+    <div class="absolute top-20 left-10 lg:left-16 w-px h-24 hidden lg:block" style="background: linear-gradient(180deg, transparent, var(--color-gold), transparent);"></div>
 
     <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
       <div class="max-w-[680px]">
-        <!-- Overline -->
-        <div class="section-overline mb-6 reveal" style="color: #D4B978;">
-          Established 2008
+        <!-- Overline with dot -->
+        <div class="flex items-center gap-3 mb-6 reveal">
+          <span class="w-2 h-2 rounded-full" style="background: var(--color-gold);"></span>
+          <span class="text-[0.75rem] font-semibold tracking-[0.15em] uppercase" style="color: #D4B978;">Established 2008 &middot; Sydney CBD</span>
         </div>
 
         <h1 class="reveal stagger-1 font-semibold" style="color: #FFFFFF; font-family: var(--font-heading);">
           Strategic Accounting<br class="hidden sm:block"> for Growing Sydney<br class="hidden sm:block"> Businesses
         </h1>
 
-        <p class="mt-7 text-[1.0625rem] md:text-[1.125rem] leading-[1.75] max-w-[540px] reveal stagger-2" style="color: rgba(255,255,255,0.85); font-family: var(--font-body);">
+        <!-- Gold accent bar under heading -->
+        <div class="flex items-center gap-3 mt-6 mb-8 reveal stagger-1">
+          <div class="w-12 h-[2px]" style="background: var(--color-gold);"></div>
+          <div class="w-2 h-[2px]" style="background: var(--color-gold); opacity: 0.5;"></div>
+        </div>
+
+        <p class="text-[1.0625rem] md:text-[1.125rem] leading-[1.75] max-w-[540px] reveal stagger-2" style="color: rgba(255,255,255,0.85); font-family: var(--font-body);">
           Tax planning, business advisory, and bookkeeping services trusted by 200+ Sydney businesses since 2008.
         </p>
 
         <div class="mt-10 flex flex-col sm:flex-row gap-4 reveal stagger-3">
-          <a href="/contact" class="inline-flex items-center justify-center gap-2.5 px-8 py-4 text-[0.875rem] font-semibold tracking-[0.02em] rounded-[3px] no-underline transition-all duration-300 hover:opacity-90" style="background: #FFFFFF; color: #0F1D33;">
+          <a href="/contact" class="inline-flex items-center justify-center gap-2.5 px-8 py-4 text-[0.875rem] font-semibold tracking-[0.02em] rounded-[3px] no-underline transition-all duration-300 hover:opacity-90 hover:shadow-lg" style="background: #FFFFFF; color: #0F1D33;">
             Book a Consultation
             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
           <a href="#services" class="inline-flex items-center justify-center px-8 py-4 text-[0.875rem] font-semibold tracking-[0.02em] rounded-[3px] no-underline transition-all duration-300 hover:bg-white/10" style="border: 2px solid #FFFFFF; color: #FFFFFF;">Our Services</a>
         </div>
+
+        <!-- Scroll indicator -->
+        <div class="hidden lg:flex items-center gap-3 mt-20 reveal stagger-4">
+          <div class="w-px h-8" style="background: linear-gradient(180deg, rgba(255,255,255,0.4), transparent);"></div>
+          <span class="text-[0.625rem] uppercase tracking-[0.2em]" style="color: rgba(255,255,255,0.35);">Scroll to explore</span>
+        </div>
       </div>
     </div>
 
-    <!-- Bottom fade to white -->
-    <div class="absolute bottom-0 left-0 right-0 h-24" style="background: linear-gradient(180deg, transparent, var(--color-bg-primary));"></div>
+    <!-- Bottom gradient fade -->
+    <div class="absolute bottom-0 left-0 right-0 h-32" style="background: linear-gradient(180deg, transparent, var(--color-bg-primary));"></div>
   </section>
 
-  <div class="gold-rule my-0"></div>
+  <!-- Decorative transition: gold rule with diamond -->
+  <div class="flex items-center justify-center gap-3 -mt-4 relative z-10">
+    <div class="w-16 h-px" style="background: linear-gradient(90deg, transparent, var(--color-gold));"></div>
+    <div class="w-2 h-2 rotate-45" style="background: var(--color-gold);"></div>
+    <div class="w-16 h-px" style="background: linear-gradient(90deg, var(--color-gold), transparent);"></div>
+  </div>
 
   <!-- ============================================
-       SERVICES — Clean grid with numbering
+       SERVICES — Numbered cards with depth
        ============================================ -->
-  <section id="services" class="py-28 md:py-36 lg:py-48" style="background: var(--color-bg-primary);">
-    <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+  <section id="services" class="relative py-28 md:py-36 lg:py-48 overflow-hidden" style="background: var(--color-bg-primary);">
+    <!-- Faint grid pattern -->
+    <div class="absolute inset-0 opacity-[0.02]" style="background-image: linear-gradient(var(--color-navy) 1px, transparent 1px), linear-gradient(90deg, var(--color-navy) 1px, transparent 1px); background-size: 60px 60px;"></div>
+    <!-- Large decorative text -->
+    <div class="absolute top-12 right-0 text-[12rem] lg:text-[18rem] font-bold leading-none select-none pointer-events-none hidden md:block" style="color: var(--color-border-subtle); font-family: var(--font-heading); opacity: 0.4;">W&A</div>
+
+    <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
       <div class="text-center mb-20 md:mb-24">
         <div class="section-overline justify-center mb-5 reveal">How We Help</div>
         <h2 class="reveal stagger-1 gold-underline gold-underline-center inline-block" style="color: var(--color-navy); font-family: var(--font-heading);">
           Services Built Around<br class="hidden sm:block"> Your Business
         </h2>
+        <p class="mt-6 text-[0.9375rem] leading-[1.7] max-w-lg mx-auto reveal stagger-2" style="color: var(--color-text-secondary);">
+          Comprehensive accounting and advisory solutions tailored to your industry, structure, and growth stage.
+        </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
         {services.map((service, i) => (
-          <div class={`reveal stagger-${i + 1} card group p-7 lg:p-8`}>
-            <!-- Number + icon row -->
-            <div class="flex items-start justify-between mb-6">
-              <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: var(--color-gold-subtle); color: var(--color-gold);" set:html={service.icon} />
-              <span class="text-[0.6875rem] font-semibold tracking-[0.1em]" style="color: var(--color-border); font-family: var(--font-body);">{service.num}</span>
+          <div class={`reveal stagger-${i + 1} card service-card-enhanced group p-7 lg:p-8 relative overflow-hidden`}>
+            <!-- Gold top border (hidden, revealed on hover) -->
+            <div class="absolute top-0 left-0 right-0 h-[3px] transition-transform duration-400 origin-left scale-x-0 group-hover:scale-x-100" style="background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light));"></div>
+            <!-- Large background number -->
+            <span class="absolute -bottom-4 -right-2 text-[5rem] font-bold leading-none select-none pointer-events-none" style="color: var(--color-border-subtle); font-family: var(--font-heading); opacity: 0.5;">{service.num}</span>
+            <!-- Content -->
+            <div class="relative z-10">
+              <div class="flex items-start justify-between mb-6">
+                <div class="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(184,146,74,0.15)]" style="background: var(--color-gold-subtle); color: var(--color-gold);" set:html={service.icon} />
+                <span class="text-[0.6875rem] font-semibold tracking-[0.1em]" style="color: var(--color-text-tertiary); font-family: var(--font-body);">{service.num}</span>
+              </div>
+              <h3 class="text-[1.1rem] font-semibold mb-3" style="font-family: var(--font-heading); color: var(--color-navy);">{service.title}</h3>
+              <p class="text-[0.875rem] leading-[1.7] mb-5" style="color: var(--color-text-secondary);">{service.description}</p>
+              <a href="/contact" class="link-hover inline-flex items-center gap-2 text-[0.8125rem] font-semibold no-underline transition-all duration-300" style="color: var(--color-gold);">
+                Learn More
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
             </div>
-            <h3 class="text-[1.1rem] font-semibold mb-3" style="font-family: var(--font-heading); color: var(--color-navy);">{service.title}</h3>
-            <p class="text-[0.875rem] leading-[1.7] mb-5" style="color: var(--color-text-secondary);">{service.description}</p>
-            <a href="/contact" class="link-hover inline-flex items-center gap-2 text-[0.8125rem] font-semibold no-underline transition-all duration-300" style="color: var(--color-gold);">
-              Learn More
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <div class="gold-rule my-0"></div>
-
-  <!-- Divider -->
-  <div class="divider max-w-[1280px] mx-auto"></div>
+  <!-- Decorative transition -->
+  <div class="relative">
+    <div class="accent-line-h max-w-[1280px] mx-auto"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full" style="background: var(--color-bg-primary); border: 2px solid var(--color-gold);"></div>
+  </div>
 
   <!-- ============================================
-       WHY CHOOSE US — Stats with visual weight
+       WHY CHOOSE US — Stats with rich layering
        ============================================ -->
-  <section class="relative crosshatch py-28 md:py-36 lg:py-48 bg-texture" style="background: var(--color-bg-secondary);">
+  <section class="relative crosshatch py-28 md:py-36 lg:py-48 bg-texture overflow-hidden" style="background: var(--color-bg-secondary);">
+    <!-- Decorative corner elements -->
+    <div class="absolute top-8 left-8 w-20 h-20 border-l-2 border-t-2 hidden lg:block" style="border-color: var(--color-gold); opacity: 0.15;"></div>
+    <div class="absolute bottom-8 right-8 w-20 h-20 border-r-2 border-b-2 hidden lg:block" style="border-color: var(--color-gold); opacity: 0.15;"></div>
+
     <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
       <div class="text-center mb-20 md:mb-24">
         <div class="section-overline justify-center mb-5 reveal">Why Choose Us</div>
@@ -178,56 +230,67 @@ const articles = [
 
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
         {stats.map((stat, i) => (
-          <div class={`reveal stagger-${i + 1} text-center p-6 md:p-8 rounded-md`} style="background: var(--color-bg-primary); box-shadow: var(--shadow-sm);">
-            <div
-              class="text-[2.25rem] md:text-[2.75rem] font-bold mb-1 tracking-[-0.02em] stat-glow"
-              style="color: var(--color-gold); font-family: var(--font-heading);"
-              data-counter
-              data-target={stat.value}
-              data-prefix={stat.prefix || ''}
-              data-suffix={stat.suffix}
-            >
-              0
+          <div class={`reveal stagger-${i + 1} text-center p-6 md:p-8 rounded-md relative overflow-hidden group`} style="background: var(--color-bg-primary); box-shadow: var(--shadow-sm); border: 1px solid var(--color-border-subtle);">
+            <!-- Gold left accent -->
+            <div class="absolute top-0 left-0 w-[3px] h-full transition-all duration-400" style="background: linear-gradient(180deg, var(--color-gold), var(--color-gold-light)); opacity: 0;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'"></div>
+            <!-- Subtle radial glow on hover -->
+            <div class="absolute -top-12 -right-12 w-32 h-32 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="background: radial-gradient(circle, rgba(184,146,74,0.06), transparent 70%);"></div>
+            <div class="relative z-10">
+              <div
+                class="text-[2.25rem] md:text-[2.75rem] font-bold mb-1 tracking-[-0.02em] stat-glow"
+                style="color: var(--color-gold); font-family: var(--font-heading);"
+                data-counter
+                data-target={stat.value}
+                data-prefix={stat.prefix || ''}
+                data-suffix={stat.suffix}
+              >
+                0
+              </div>
+              <h3 class="text-[0.8125rem] md:text-[0.875rem] font-semibold mb-2 tracking-[-0.01em]" style="color: var(--color-navy); font-family: var(--font-heading);">{stat.label}</h3>
+              <p class="text-[0.75rem] md:text-[0.8125rem] leading-[1.6] hidden md:block" style="color: var(--color-text-secondary);">{stat.desc}</p>
             </div>
-            <h3 class="text-[0.8125rem] md:text-[0.875rem] font-semibold mb-2 tracking-[-0.01em]" style="color: var(--color-navy); font-family: var(--font-heading);">{stat.label}</h3>
-            <p class="text-[0.75rem] md:text-[0.8125rem] leading-[1.6] hidden md:block" style="color: var(--color-text-secondary);">{stat.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <div class="gold-rule my-0"></div>
-
   <!-- ============================================
-       TRUSTED BY — Subtle logo placeholders
+       TRUSTED BY — Clean logo bar with separators
        ============================================ -->
-  <section class="py-16 md:py-20" style="background: var(--color-bg-primary);">
+  <section class="relative py-14 md:py-18 overflow-hidden" style="background: var(--color-bg-primary);">
+    <div class="absolute top-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, var(--color-border), transparent);"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, var(--color-border), transparent);"></div>
     <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
-      <p class="text-center text-[0.6875rem] font-semibold uppercase tracking-[0.14em] mb-10 reveal" style="color: var(--color-text-tertiary);">
+      <p class="text-center text-[0.6875rem] font-semibold uppercase tracking-[0.14em] mb-8 reveal" style="color: var(--color-text-tertiary);">
         Trusted by leading Sydney businesses
       </p>
-      <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-4 md:gap-x-14 max-w-4xl mx-auto reveal-fade">
-        <span class="whitespace-nowrap text-[0.8rem] font-bold uppercase tracking-[0.1em] cursor-default transition-colors duration-300" style="color: #9CA3AF; font-family: system-ui, sans-serif;" onmouseover="this.style.color='#1A1A2E'" onmouseout="this.style.color='#9CA3AF'">Harbour Construction</span>
-        <span class="whitespace-nowrap text-[0.95rem] font-light italic cursor-default transition-colors duration-300" style="color: #9CA3AF; font-family: var(--font-heading);" onmouseover="this.style.color='#1A1A2E'" onmouseout="this.style.color='#9CA3AF'">Meridian Property</span>
-        <span class="whitespace-nowrap text-[0.85rem] font-medium cursor-default transition-colors duration-300" style="color: #9CA3AF; font-family: var(--font-body); letter-spacing: 0.02em;" onmouseover="this.style.color='#1A1A2E'" onmouseout="this.style.color='#9CA3AF'">Coastal Dining Co</span>
-        <span class="whitespace-nowrap text-[0.75rem] font-bold uppercase tracking-[0.06em] cursor-default transition-colors duration-300" style="color: #9CA3AF; font-family: system-ui, sans-serif;" onmouseover="this.style.color='#1A1A2E'" onmouseout="this.style.color='#9CA3AF'">TechBridge Solutions</span>
-        <span class="whitespace-nowrap text-[0.9rem] font-normal cursor-default transition-colors duration-300" style="color: #9CA3AF; font-family: var(--font-heading); letter-spacing: 0.02em;" onmouseover="this.style.color='#1A1A2E'" onmouseout="this.style.color='#9CA3AF'">Greenfield Medical</span>
-        <span class="whitespace-nowrap text-[0.85rem] font-semibold cursor-default transition-colors duration-300" style="color: #9CA3AF; font-family: var(--font-heading); letter-spacing: 0.05em; font-variant: small-caps;" onmouseover="this.style.color='#1A1A2E'" onmouseout="this.style.color='#9CA3AF'">Atlas Legal Partners</span>
+      <div class="flex flex-wrap justify-center items-center gap-y-4 max-w-4xl mx-auto reveal-fade">
+        <span class="whitespace-nowrap px-5 md:px-7 text-[0.8rem] font-bold uppercase tracking-[0.1em] cursor-default transition-colors duration-300" style="color: #B0B8C4; font-family: system-ui, sans-serif;" onmouseover="this.style.color='#1B2B4B'" onmouseout="this.style.color='#B0B8C4'">Harbour Construction</span>
+        <span class="hidden sm:block w-px h-4" style="background: var(--color-border);"></span>
+        <span class="whitespace-nowrap px-5 md:px-7 text-[0.95rem] font-light italic cursor-default transition-colors duration-300" style="color: #B0B8C4; font-family: var(--font-heading);" onmouseover="this.style.color='#1B2B4B'" onmouseout="this.style.color='#B0B8C4'">Meridian Property</span>
+        <span class="hidden sm:block w-px h-4" style="background: var(--color-border);"></span>
+        <span class="whitespace-nowrap px-5 md:px-7 text-[0.85rem] font-medium cursor-default transition-colors duration-300" style="color: #B0B8C4; font-family: var(--font-body); letter-spacing: 0.02em;" onmouseover="this.style.color='#1B2B4B'" onmouseout="this.style.color='#B0B8C4'">Coastal Dining Co</span>
+        <span class="hidden sm:block w-px h-4" style="background: var(--color-border);"></span>
+        <span class="whitespace-nowrap px-5 md:px-7 text-[0.75rem] font-bold uppercase tracking-[0.06em] cursor-default transition-colors duration-300" style="color: #B0B8C4; font-family: system-ui, sans-serif;" onmouseover="this.style.color='#1B2B4B'" onmouseout="this.style.color='#B0B8C4'">TechBridge Solutions</span>
+        <span class="hidden sm:block w-px h-4" style="background: var(--color-border);"></span>
+        <span class="whitespace-nowrap px-5 md:px-7 text-[0.9rem] font-normal cursor-default transition-colors duration-300" style="color: #B0B8C4; font-family: var(--font-heading); letter-spacing: 0.02em;" onmouseover="this.style.color='#1B2B4B'" onmouseout="this.style.color='#B0B8C4'">Greenfield Medical</span>
+        <span class="hidden sm:block w-px h-4" style="background: var(--color-border);"></span>
+        <span class="whitespace-nowrap px-5 md:px-7 text-[0.85rem] font-semibold cursor-default transition-colors duration-300" style="color: #B0B8C4; font-family: var(--font-heading); letter-spacing: 0.05em; font-variant: small-caps;" onmouseover="this.style.color='#1B2B4B'" onmouseout="this.style.color='#B0B8C4'">Atlas Legal Partners</span>
       </div>
     </div>
   </section>
 
-  <div class="gold-rule my-0"></div>
-
   <!-- ============================================
-       TESTIMONIALS — Editorial pull-quote design
+       TESTIMONIALS — Rich editorial design
        ============================================ -->
-  <section class="relative py-28 md:py-36 lg:py-48" style="background: var(--color-bg-primary);">
-    <!-- Subtle top divider -->
-    <div class="absolute top-0 left-0 right-0 divider"></div>
+  <section class="relative py-28 md:py-36 lg:py-48 overflow-hidden" style="background: var(--color-bg-primary);">
+    <!-- Subtle background image -->
+    <div class="absolute inset-0 opacity-[0.02]" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&h=900&fit=crop'); background-size: cover; background-position: center;"></div>
+    <!-- Decorative vertical line -->
+    <div class="absolute top-0 left-1/2 w-px h-20 hidden lg:block" style="background: linear-gradient(180deg, var(--color-border), transparent);"></div>
 
-    <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+    <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
       <div class="text-center mb-20 md:mb-24">
         <div class="section-overline justify-center mb-5 reveal">Testimonials</div>
         <h2 class="reveal stagger-1 gold-underline gold-underline-center inline-block" style="color: var(--color-navy); font-family: var(--font-heading);">
@@ -237,17 +300,27 @@ const articles = [
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-testimonials>
         {testimonials.map((t, i) => (
-          <div class={`reveal stagger-${i + 1} relative p-8 md:p-9 rounded-md`} style="background: var(--color-bg-secondary); border: 1px solid var(--color-border-subtle);">
+          <div class={`reveal stagger-${i + 1} relative p-8 md:p-9 rounded-md group`} style="background: var(--color-bg-secondary); border: 1px solid var(--color-border-subtle);">
+            <!-- Gold left border accent -->
+            <div class="absolute top-6 bottom-6 left-0 w-[3px] rounded-full" style="background: linear-gradient(180deg, var(--color-gold), var(--color-gold-light));"></div>
             <!-- Large decorative quote -->
-            <span class="absolute top-5 left-7 text-[4.5rem] leading-none select-none pointer-events-none" style="color: var(--color-gold); opacity: 0.1; font-family: var(--font-heading);">&ldquo;</span>
+            <span class="absolute top-4 right-6 text-[5rem] leading-none select-none pointer-events-none" style="color: var(--color-gold); opacity: 0.08; font-family: var(--font-heading);">&rdquo;</span>
 
-            <blockquote class="relative z-10 pt-10">
+            <blockquote class="relative z-10 pt-2 pl-4">
+              <!-- Star rating -->
+              <div class="flex gap-1 mb-4">
+                {[1,2,3,4,5].map(() => (
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20" style="color: var(--color-gold);"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                ))}
+              </div>
               <p class="text-[0.9375rem] leading-[1.8] mb-7" style="color: var(--color-text-primary); font-style: italic; font-family: var(--font-body);">
                 &ldquo;{t.quote}&rdquo;
               </p>
-              <!-- Attribution with gold accent line -->
+              <!-- Attribution with avatar -->
               <footer class="flex items-center gap-3">
-                <div class="w-8 h-[1px]" style="background: var(--color-gold);"></div>
+                <div class="w-10 h-10 rounded-full flex items-center justify-center text-[0.6875rem] font-bold tracking-[0.05em]" style="background: var(--color-gold-subtle); color: var(--color-gold); font-family: var(--font-body);">
+                  {t.initials}
+                </div>
                 <div>
                   <p class="text-[0.8125rem] font-semibold" style="color: var(--color-navy);">{t.name}</p>
                   <p class="text-[0.75rem]" style="color: var(--color-text-secondary);">{t.title}</p>
@@ -260,12 +333,22 @@ const articles = [
     </div>
   </section>
 
-  <div class="gold-rule my-0"></div>
+  <!-- Decorative transition with text -->
+  <div class="relative py-6" style="background: var(--color-bg-primary);">
+    <div class="flex items-center justify-center gap-4 max-w-[1280px] mx-auto px-6">
+      <div class="flex-1 h-px" style="background: linear-gradient(90deg, transparent, var(--color-border));"></div>
+      <span class="text-[0.625rem] font-semibold uppercase tracking-[0.2em] px-4" style="color: var(--color-text-tertiary);">Latest thinking</span>
+      <div class="flex-1 h-px" style="background: linear-gradient(90deg, var(--color-border), transparent);"></div>
+    </div>
+  </div>
 
   <!-- ============================================
-       LATEST INSIGHTS — Magazine-style cards
+       LATEST INSIGHTS — Magazine-style with depth
        ============================================ -->
-  <section class="relative crosshatch py-28 md:py-36 lg:py-48 bg-texture" style="background: var(--color-bg-secondary);">
+  <section class="relative crosshatch py-28 md:py-36 lg:py-48 bg-texture overflow-hidden" style="background: var(--color-bg-secondary);">
+    <!-- Decorative large number -->
+    <div class="absolute -bottom-8 -left-4 text-[14rem] font-bold leading-none select-none pointer-events-none hidden lg:block" style="color: var(--color-border-light); font-family: var(--font-heading); opacity: 0.3;">&sect;</div>
+
     <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 md:mb-24 gap-4">
         <div>
@@ -283,17 +366,24 @@ const articles = [
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {articles.map((article, i) => (
           <article class={`reveal stagger-${i + 1} card blog-card group overflow-hidden`}>
-            <div class="aspect-[16/10] overflow-hidden">
+            <div class="aspect-[16/10] overflow-hidden relative">
               <img src={article.image} alt={article.alt} class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-[1.04]" loading="lazy" />
-            </div>
-            <div class="p-6 md:p-7">
-              <span class="inline-block text-[0.625rem] font-semibold uppercase tracking-[0.12em] px-3 py-[5px] rounded-sm mb-4" style={`background: ${article.category === 'Tax' ? 'var(--color-gold-subtle)' : article.category === 'Business' ? 'rgba(27,43,75,0.05)' : 'rgba(74,85,104,0.06)'}; color: ${article.category === 'Tax' ? 'var(--color-gold)' : article.category === 'Business' ? 'var(--color-navy)' : 'var(--color-slate)'};`}>
+              <!-- Image overlay gradient -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+              <!-- Category badge on image -->
+              <span class="absolute top-4 left-4 text-[0.625rem] font-semibold uppercase tracking-[0.12em] px-3 py-[5px] rounded-sm" style={`background: ${article.category === 'Tax' ? 'rgba(184,146,74,0.9)' : article.category === 'Business' ? 'rgba(27,43,75,0.85)' : 'rgba(74,85,104,0.85)'}; color: #fff; backdrop-filter: blur(4px);`}>
                 {article.category}
               </span>
+            </div>
+            <div class="p-6 md:p-7">
               <h3 class="text-[1.05rem] font-semibold mb-2.5 leading-[1.35]" style="font-family: var(--font-heading); color: var(--color-navy);">{article.title}</h3>
               <p class="text-[0.8125rem] mb-5 line-clamp-2 leading-[1.7]" style="color: var(--color-text-secondary);">{article.excerpt}</p>
               <div class="flex items-center justify-between pt-4" style="border-top: 1px solid var(--color-border-subtle);">
-                <span class="text-[0.6875rem] tracking-[0.01em]" style="color: var(--color-text-tertiary);">{article.date}</span>
+                <div class="flex items-center gap-2">
+                  <span class="text-[0.6875rem] tracking-[0.01em]" style="color: var(--color-text-tertiary);">{article.date}</span>
+                  <span class="w-1 h-1 rounded-full" style="background: var(--color-border);"></span>
+                  <span class="text-[0.6875rem] tracking-[0.01em]" style="color: var(--color-text-tertiary);">{article.readTime}</span>
+                </div>
                 <a href="/insights" class="link-hover inline-flex items-center gap-1.5 text-[0.8125rem] font-semibold no-underline" style="color: var(--color-gold);">
                   Read
                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -306,31 +396,51 @@ const articles = [
     </div>
   </section>
 
-  <div class="gold-rule my-0"></div>
-
   <!-- ============================================
-       CTA — Confident, dark, with accent border
+       CTA — Dramatic, dark, layered
        ============================================ -->
-  <section class="relative py-24 md:py-32 overflow-hidden" style="background: var(--color-navy-deep);">
-    <!-- Subtle texture -->
-    <div class="absolute inset-0 opacity-[0.25]" style="background-image: url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1600&h=900&fit=crop'); background-size: cover; background-position: center;"></div>
+  <section class="relative py-28 md:py-36 overflow-hidden" style="background: var(--color-navy-deep);">
+    <!-- Background image -->
+    <div class="absolute inset-0 opacity-[0.2]" style="background-image: url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1600&h=900&fit=crop'); background-size: cover; background-position: center;"></div>
+    <!-- Gradient overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0F1D33]/80 via-transparent to-[#0F1D33]/90"></div>
     <!-- Gold top accent -->
-    <div class="absolute top-0 left-0 right-0 h-[1px]" style="background: linear-gradient(90deg, transparent, var(--color-gold), transparent);"></div>
+    <div class="absolute top-0 left-0 right-0 h-[2px]" style="background: linear-gradient(90deg, transparent, var(--color-gold), transparent);"></div>
+    <!-- Grain texture -->
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27n%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.9%27 numOctaves=%274%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23n)%27/%3E%3C/svg%3E'); background-size: 256px;"></div>
+
+    <!-- Decorative corner brackets -->
+    <div class="absolute top-10 left-10 w-12 h-12 border-l border-t hidden lg:block" style="border-color: rgba(212,185,120,0.2);"></div>
+    <div class="absolute bottom-10 right-10 w-12 h-12 border-r border-b hidden lg:block" style="border-color: rgba(212,185,120,0.2);"></div>
 
     <div class="relative max-w-[640px] mx-auto px-6 lg:px-10 text-center">
-      <div class="section-overline justify-center mb-6 reveal" style="color: var(--color-gold-light);">Get Started</div>
-      <h2 class="text-white mb-5 reveal stagger-1" style="font-family: var(--font-heading);">
+      <div class="flex items-center justify-center gap-3 mb-6 reveal">
+        <span class="w-2 h-2 rounded-full" style="background: var(--color-gold);"></span>
+        <span class="text-[0.75rem] font-semibold tracking-[0.15em] uppercase" style="color: var(--color-gold-light);">Get Started</span>
+        <span class="w-2 h-2 rounded-full" style="background: var(--color-gold);"></span>
+      </div>
+      <h2 class="mb-5 reveal stagger-1" style="color: #FFFFFF; font-family: var(--font-heading);">
         Ready to Take Control<br class="hidden sm:block"> of Your Finances?
       </h2>
-      <p class="text-[1rem] leading-[1.75] mb-10 reveal stagger-2" style="color: rgba(160, 172, 192, 0.8);">
+      <!-- Gold accent bar -->
+      <div class="flex items-center justify-center gap-2 mb-8 reveal stagger-1">
+        <div class="w-8 h-[2px]" style="background: var(--color-gold); opacity: 0.5;"></div>
+        <div class="w-16 h-[2px]" style="background: var(--color-gold);"></div>
+        <div class="w-8 h-[2px]" style="background: var(--color-gold); opacity: 0.5;"></div>
+      </div>
+      <p class="text-[1rem] leading-[1.75] mb-10 reveal stagger-2" style="color: rgba(160, 172, 192, 0.85);">
         Book a free 30-minute consultation with one of our partners. No obligation, no jargon &mdash; just clear advice.
       </p>
       <div class="reveal stagger-3">
-        <a href="/contact" class="inline-flex items-center justify-center gap-2.5 px-9 py-4 text-[0.875rem] font-semibold tracking-[0.02em] rounded-[3px] no-underline transition-all duration-400" style="background: var(--color-gold); color: #fff; box-shadow: var(--shadow-gold);" onmouseover="this.style.background='var(--color-gold-hover)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='var(--color-gold)';this.style.transform='translateY(0)'">
+        <a href="/contact" class="inline-flex items-center justify-center gap-2.5 px-9 py-4 text-[0.875rem] font-semibold tracking-[0.02em] rounded-[3px] no-underline transition-all duration-400" style="background: var(--color-gold); color: #fff; box-shadow: var(--shadow-gold);" onmouseover="this.style.background='var(--color-gold-hover)';this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 32px rgba(184,146,74,0.25)'" onmouseout="this.style.background='var(--color-gold)';this.style.transform='translateY(0)';this.style.boxShadow='var(--shadow-gold)'">
           Book Your Free Consultation
           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
       </div>
+      <!-- Trust line -->
+      <p class="mt-8 text-[0.6875rem] tracking-[0.04em] reveal stagger-4" style="color: rgba(160, 172, 192, 0.4);">
+        No credit card required &middot; Free 30-minute session &middot; No obligation
+      </p>
     </div>
   </section>
 
