@@ -7,8 +7,8 @@ import '../styles/global.css';
 const articles = [
   {
     category: 'Tax',
-    title: '5 Tax Deductions Sydney Businesses Miss Every Year',
-    excerpt: 'Most business owners claim the obvious deductions but overlook several legitimate strategies that could save thousands annually. From home office costs to motor vehicle deductions, here\u2019s what you might be leaving on the table.',
+    title: 'Are You Missing These 5 Tax Deductions? Most Sydney Businesses Are',
+    excerpt: 'The average business owner leaves $8,000 to $15,000 in legitimate deductions unclaimed each year. From home office costs to motor vehicle claims, here are the ones your accountant should be catching.',
     date: '12 Feb 2026',
     readTime: '5 min read',
     image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=500&fit=crop',
@@ -16,8 +16,8 @@ const articles = [
   },
   {
     category: 'Business',
-    title: 'Is Your Business Structure Costing You Money?',
-    excerpt: 'The difference between operating as a sole trader, company, or trust can mean tens of thousands in tax each year. We break down the pros, cons, and transition considerations.',
+    title: 'Sole Trader, Company, or Trust? Which Structure Saves You the Most Tax?',
+    excerpt: 'Choosing the wrong structure could cost you $20,000+ in unnecessary tax every year. We break down the real numbers and show you when it makes sense to switch.',
     date: '28 Jan 2026',
     readTime: '7 min read',
     image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=500&fit=crop',
@@ -25,8 +25,8 @@ const articles = [
   },
   {
     category: 'Superannuation',
-    title: 'SMSF Property Investment: What You Need to Know in 2026',
-    excerpt: 'The rules around property investment through self-managed super funds continue to evolve. We cover the key compliance requirements and strategic considerations.',
+    title: 'Can You Buy Property Through Your SMSF in 2026? Updated Rules Explained',
+    excerpt: 'New ATO compliance rules for SMSF property investment took effect this year. Here is what every NSW fund holder needs to know before making their next investment move.',
     date: '15 Jan 2026',
     readTime: '6 min read',
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=500&fit=crop',
@@ -34,8 +34,8 @@ const articles = [
   },
   {
     category: 'Tax',
-    title: 'FBT Season 2026: A Checklist for Employers',
-    excerpt: "Fringe Benefits Tax returns are due soon. Here\u2019s a practical checklist to make sure you\u2019re capturing everything and not overpaying.",
+    title: 'FBT 2026: Are You Overpaying? A Checklist Every Employer Needs',
+    excerpt: "Fringe Benefits Tax returns are due soon and most employers overpay. Here\u2019s a practical checklist to make sure you\u2019re claiming everything you\u2019re entitled to.",
     date: '3 Jan 2026',
     readTime: '4 min read',
     image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=500&fit=crop',
@@ -43,8 +43,8 @@ const articles = [
   },
   {
     category: 'Business',
-    title: 'Cash Flow Forecasting: Why Most Small Businesses Get It Wrong',
-    excerpt: "Profitability doesn\u2019t guarantee survival. We explain why cash flow forecasting is the skill most business owners never learned but desperately need.",
+    title: 'Why Profitable Businesses Still Go Broke: A Cash Flow Forecasting Guide',
+    excerpt: "Revenue does not equal survival. We explain the simple forecasting method that helps you spot cash shortfalls 90 days before they become a crisis.",
     date: '18 Dec 2025',
     readTime: '6 min read',
     image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=500&fit=crop',
@@ -52,8 +52,8 @@ const articles = [
   },
   {
     category: 'Superannuation',
-    title: "Contribution Caps 2026: What\u2019s Changed and What It Means for You",
-    excerpt: "The ATO has updated contribution caps for the new financial year. Here\u2019s a clear summary of the changes and how to plan around them.",
+    title: "Super Contribution Caps 2026: How Much Can You Put In This Year?",
+    excerpt: "The ATO has raised contribution caps for the new financial year. Here\u2019s exactly what changed, how it affects your super strategy, and how to maximise your contributions.",
     date: '5 Dec 2025',
     readTime: '3 min read',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop',
@@ -64,7 +64,7 @@ const articles = [
 const categories = ['All', 'Tax', 'Business', 'Superannuation'];
 ---
 
-<Layout title="Insights" description="Expert analysis and practical advice on tax, business strategy, and superannuation for Australian businesses.">
+<Layout title="Tax & Business Insights for Sydney Businesses | Whitfield & Associates" description="Practical tax tips, business structuring advice, and SMSF guides from Sydney CPAs. Save more tax and grow your business with expert insights. Read now.">
   <Navbar />
 
   <!-- PAGE HEADER — Rich, editorial -->
@@ -82,7 +82,7 @@ const categories = ['All', 'Tax', 'Business', 'Superannuation'];
         <span class="text-[0.75rem] font-semibold tracking-[0.15em] uppercase" style="color: var(--color-gold);">Knowledge Centre</span>
       </div>
       <h1 class="reveal stagger-1 max-w-xl" style="color: var(--color-navy); font-family: var(--font-heading);">
-        Insights &amp; Resources
+        Tax Tips &amp; Business<br class="hidden sm:block"> Growth Strategies
       </h1>
       <!-- Gold accent bar -->
       <div class="flex items-center gap-3 mt-5 mb-6 reveal stagger-1">
@@ -90,7 +90,7 @@ const categories = ['All', 'Tax', 'Business', 'Superannuation'];
         <div class="w-2 h-[2px]" style="background: var(--color-gold); opacity: 0.5;"></div>
       </div>
       <p class="text-[1.0625rem] leading-[1.75] max-w-lg reveal stagger-2" style="color: var(--color-text-secondary);">
-        Expert analysis and practical advice on tax, business strategy, and superannuation for Australian businesses.
+        Actionable advice from our CPA-qualified partners to help you pay less tax, structure your business smarter, and make confident financial decisions.
       </p>
       <!-- Article count badge -->
       <div class="mt-6 reveal stagger-3">
@@ -195,7 +195,7 @@ const categories = ['All', 'Tax', 'Business', 'Superannuation'];
         <span class="w-2 h-2 rounded-full" style="background: var(--color-gold);"></span>
       </div>
       <h2 class="reveal stagger-1 mb-4" style="color: var(--color-navy); font-family: var(--font-heading); font-size: clamp(1.5rem, 2vw + 0.8rem, 2.2rem);">
-        Stay Informed
+        Get Smarter Tax Tips Monthly
       </h2>
       <!-- Gold accent bar -->
       <div class="flex items-center justify-center gap-2 mb-6 reveal stagger-1">
@@ -204,7 +204,7 @@ const categories = ['All', 'Tax', 'Business', 'Superannuation'];
         <div class="w-6 h-[2px]" style="background: var(--color-gold); opacity: 0.5;"></div>
       </div>
       <p class="text-[0.9375rem] leading-[1.75] mb-9 reveal stagger-2" style="color: var(--color-text-secondary);">
-        Get our latest insights delivered to your inbox monthly. No spam, just expert advice.
+        Join 1,200+ Sydney business owners who get our best tax-saving strategies and business insights delivered monthly. No fluff, no spam.
       </p>
       <form action="https://formspree.io/f/placeholder" method="POST" id="newsletter-form" class="flex flex-col sm:flex-row gap-3 reveal stagger-3">
         <input
