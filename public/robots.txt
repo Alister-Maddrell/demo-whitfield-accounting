@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://whitfieldassociates.com.au/sitemap.xml

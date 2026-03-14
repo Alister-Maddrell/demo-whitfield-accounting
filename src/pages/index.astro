@@ -243,6 +243,7 @@ const articles = [
                 data-target={stat.value}
                 data-prefix={stat.prefix || ''}
                 data-suffix={stat.suffix}
+                aria-label={`${stat.prefix || ''}${stat.value}${stat.suffix}`}
               >
                 0
               </div>
@@ -384,10 +385,10 @@ const articles = [
                   <span class="w-1 h-1 rounded-full" style="background: var(--color-border);"></span>
                   <span class="text-[0.6875rem] tracking-[0.01em]" style="color: var(--color-text-tertiary);">{article.readTime}</span>
                 </div>
-                <a href="/insights" class="link-hover inline-flex items-center gap-1.5 text-[0.8125rem] font-semibold no-underline" style="color: var(--color-gold);">
+                <span class="inline-flex items-center gap-1.5 text-[0.8125rem] font-semibold" style="color: var(--color-gold);">
                   Read
                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </a>
+                </span>
               </div>
             </div>
           </article>
@@ -428,7 +429,7 @@ const articles = [
         <div class="w-16 h-[2px]" style="background: var(--color-gold);"></div>
         <div class="w-8 h-[2px]" style="background: var(--color-gold); opacity: 0.5;"></div>
       </div>
-      <p class="text-[1rem] leading-[1.75] mb-10 reveal stagger-2" style="color: rgba(160, 172, 192, 0.85);">
+      <p class="text-[1rem] leading-[1.75] mb-10 reveal stagger-2" style="color: rgba(200, 210, 220, 0.95);">
         Book a free 30-minute consultation with a senior partner. No obligation, no jargon &mdash; just clear, actionable advice tailored to your situation.
       </p>
       <div class="reveal stagger-3">
@@ -438,7 +439,7 @@ const articles = [
         </a>
       </div>
       <!-- Trust line -->
-      <p class="mt-8 text-[0.6875rem] tracking-[0.04em] reveal stagger-4" style="color: rgba(160, 172, 192, 0.4);">
+      <p class="mt-8 text-[0.6875rem] tracking-[0.04em] reveal stagger-4" style="color: rgba(180, 190, 205, 0.75);">
         No credit card required &middot; Free 30-minute session &middot; Speak directly with a partner
       </p>
     </div>
