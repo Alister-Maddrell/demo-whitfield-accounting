@@ -107,45 +107,7 @@ const memberships = [
       </div>
 
       <!-- Cal.com inline embed -->
-      <div id="cal-booking" class="reveal" style="width:100%; min-height:500px; overflow:auto; border: 1px solid var(--color-border-subtle); border-radius: 6px; background: var(--color-bg-primary);">
-        <cal-inline calLink="alister-maddrell-rmtqo9/consultation" config='{"theme":"light","styles":{"branding":{"brandColor":"#B8924A"}}}'></cal-inline>
-      </div>
-
-      <!-- Fallback calendar UI (shown if Cal.com doesn't load) -->
-      <div id="cal-fallback" class="hidden" style="border: 1px solid var(--color-border-subtle); border-radius: 6px; overflow: hidden;">
-        <!-- Mock calendar header -->
-        <div class="flex items-center justify-between px-6 py-4" style="background: var(--color-navy); color: #fff;">
-          <button class="text-sm opacity-70 hover:opacity-100">&larr; Previous</button>
-          <span class="text-[0.875rem] font-semibold tracking-[0.02em]" style="font-family: var(--font-heading);">March 2026</span>
-          <button class="text-sm opacity-70 hover:opacity-100">Next &rarr;</button>
-        </div>
-        <!-- Day headers -->
-        <div class="grid grid-cols-5 text-center text-[0.6875rem] font-semibold tracking-[0.1em] uppercase py-3 border-b" style="background: var(--color-bg-secondary); color: var(--color-text-tertiary); border-color: var(--color-border-subtle);">
-          <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span>
-        </div>
-        <!-- Week of slots -->
-        <div class="grid grid-cols-5 gap-px" style="background: var(--color-border-subtle);">
-          {[
-            { day: '16', slots: ['9:00am', '10:30am', '2:00pm'] },
-            { day: '17', slots: ['9:30am', '11:00am', '3:00pm'] },
-            { day: '18', slots: ['10:00am', '1:30pm'] },
-            { day: '19', slots: ['9:00am', '11:30am', '2:30pm', '4:00pm'] },
-            { day: '20', slots: ['9:30am', '1:00pm'] },
-          ].map(d => (
-            <div class="p-3 text-center" style="background: var(--color-bg-primary);">
-              <span class="block text-[1.125rem] font-semibold mb-2" style="color: var(--color-navy); font-family: var(--font-heading);">{d.day}</span>
-              <div class="space-y-1.5">
-                {d.slots.map(slot => (
-                  <button class="w-full py-1.5 text-[0.6875rem] font-medium rounded-sm border transition-all duration-200 hover:border-current cursor-pointer" style="border-color: var(--color-border); color: var(--color-gold);" onclick="this.style.background='var(--color-gold)';this.style.color='#fff';this.style.borderColor='var(--color-gold)'">{slot}</button>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-        <p class="text-center text-[0.75rem] py-4 px-6" style="color: var(--color-text-tertiary); background: var(--color-bg-secondary);">
-          Select a time that works for you — we'll confirm within 2 hours
-        </p>
-      </div>
+      <div id="cal-embed" class="reveal" style="width:100%; min-height:500px; overflow:auto; border: 1px solid var(--color-border-subtle); border-radius: 6px; background: var(--color-bg-primary);"></div>
     </div>
   </section>
 
@@ -434,18 +396,37 @@ const memberships = [
   <Footer />
 
   <script>
-    // Cal.com fallback — show mock calendar if embed doesn't load within 3s
-    setTimeout(() => {
-      const calBooking = document.getElementById('cal-booking');
-      const calFallback = document.getElementById('cal-fallback');
-      if (calBooking && calFallback) {
-        const iframe = calBooking.querySelector('iframe');
-        if (!iframe) {
-          calBooking.classList.add('hidden');
-          calFallback.classList.remove('hidden');
+    // Cal.com namespace embed loader
+    (function (C, A, L) {
+      let p = function (a, ar) { a.q.push(ar); };
+      let d = C.document;
+      C.Cal = C.Cal || function () {
+        let cal = C.Cal;
+        let ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {};
+          cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
         }
-      }
-    }, 3000);
+        if (ar[0] === L) {
+          const api = function () { p(api, arguments); };
+          const namespace = ar[1];
+          api.q = api.q || [];
+          typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar);
+          return;
+        }
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+
+    Cal("init", { origin: "https://cal.com" });
+    Cal("inline", {
+      calLink: "alister-maddrell-rmtqo9/consultation",
+      elementOrSelector: "#cal-embed",
+      config: { theme: "light", styles: { branding: { brandColor: "#B8924A" } } }
+    });
+    Cal("ui", { hideEventTypeDetails: false });
 
     // Form submission handler
     const form = document.getElementById('contact-form') as HTMLFormElement;
