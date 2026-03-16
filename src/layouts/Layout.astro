@@ -118,7 +118,7 @@ const { title, description = 'Sydney CBD accountants trusted by 200+ businesses 
       });
     }
 
-    // Counter animation — refined easing
+    // Counter animation
     const counterObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -133,7 +133,6 @@ const { title, description = 'Sydney CBD accountants trusted by 200+ businesses 
           function animate(currentTime: number) {
             const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / duration, 1);
-            // Smooth ease-out-quart
             const eased = 1 - Math.pow(1 - progress, 4);
             const current = Math.floor(eased * numericTarget);
             el.textContent = prefix + current.toLocaleString() + suffix;

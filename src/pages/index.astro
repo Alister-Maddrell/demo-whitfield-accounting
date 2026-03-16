@@ -8,25 +8,25 @@ const services = [
   {
     title: 'Tax Planning & Compliance',
     description: 'Save thousands each year with proactive strategies that have put over $50M back in our clients\u2019 pockets. Individual, company, trust, and SMSF returns lodged on time, every time, by qualified CPAs.',
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
     num: '01',
   },
   {
     title: 'Business Advisory',
     description: 'Make smarter decisions with clear financial data behind you. From structuring and succession planning to cash flow forecasting, we\u2019ve helped 200+ Sydney businesses scale profitably.',
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>`,
     num: '02',
   },
   {
     title: 'Bookkeeping & Payroll',
     description: 'Get your weekends back and never miss a compliance deadline. Accurate bookkeeping and payroll processing by Xero, MYOB, and QuickBooks certified professionals &mdash; from $499/month.',
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
     num: '03',
   },
   {
     title: 'Self-Managed Super Funds',
     description: 'Build retirement wealth on your terms. We handle SMSF setup, annual administration, and ATO compliance end-to-end &mdash; so you can focus on your investment strategy, not paperwork.',
-    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>`,
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>`,
     num: '04',
   },
 ];
@@ -94,162 +94,97 @@ const articles = [
   <Navbar />
 
   <!-- ============================================
-       HERO — Cinematic, layered, confident
+       HERO — Clean, authoritative, structured
        ============================================ -->
-  <section class="relative pt-36 pb-24 md:pt-48 md:pb-36 lg:pt-56 lg:pb-44 overflow-hidden">
+  <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 lg:pt-52 lg:pb-40 overflow-hidden">
     <!-- Hero background image -->
     <div class="absolute inset-0" style="background-image: url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1600&h=900&fit=crop'); background-size: cover; background-position: center bottom;"></div>
-    <!-- Multi-layer dark overlay -->
-    <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/55 to-black/25"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10"></div>
-    <!-- Subtle grain texture -->
-    <div class="absolute inset-0 opacity-[0.04]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27n%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.9%27 numOctaves=%274%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23n)%27/%3E%3C/svg%3E'); background-size: 256px; mix-blend-mode: overlay;"></div>
+    <!-- Dark overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-[#0F172A]/80 via-[#0F172A]/65 to-[#0F172A]/40"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/40 via-transparent to-transparent"></div>
 
-    <!-- Decorative corner frames -->
-    <div class="absolute top-24 right-10 lg:right-20 w-32 h-32 lg:w-48 lg:h-48 border border-white/10 rounded-sm hidden md:block"></div>
-    <div class="absolute top-28 right-14 lg:right-24 w-32 h-32 lg:w-48 lg:h-48 border border-gold/20 rounded-sm hidden md:block"></div>
-    <!-- Vertical gold accent line -->
-    <div class="absolute top-20 left-10 lg:left-16 w-px h-24 hidden lg:block" style="background: linear-gradient(180deg, transparent, var(--color-gold), transparent);"></div>
-
-    <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
-      <div class="max-w-[680px]">
-        <!-- Overline with dot -->
+    <div class="relative max-w-[1200px] mx-auto px-6 lg:px-10">
+      <div class="max-w-[640px]">
+        <!-- Overline -->
         <div class="flex items-center gap-3 mb-6 reveal">
-          <span class="w-2 h-2 rounded-full" style="background: var(--color-gold);"></span>
-          <span class="text-[0.75rem] font-semibold tracking-[0.15em] uppercase" style="color: #D4B978;">Established 2008 &middot; Sydney CBD</span>
+          <div class="w-5 h-[2px] bg-emerald-400"></div>
+          <span class="text-[0.75rem] font-semibold tracking-[0.14em] uppercase text-emerald-300">Established 2008 &middot; Sydney CBD</span>
         </div>
 
-        <h1 class="reveal stagger-1 font-semibold" style="color: #FFFFFF; font-family: var(--font-heading);">
+        <h1 class="reveal stagger-1 text-white" style="font-family: var(--font-heading);">
           Keep More of What<br class="hidden sm:block"> You Earn. Grow What<br class="hidden sm:block"> You&rsquo;ve Built.
         </h1>
 
-        <!-- Gold accent bar under heading -->
-        <div class="flex items-center gap-3 mt-6 mb-8 reveal stagger-1">
-          <div class="w-12 h-[2px]" style="background: var(--color-gold);"></div>
-          <div class="w-2 h-[2px]" style="background: var(--color-gold); opacity: 0.5;"></div>
-        </div>
-
-        <p class="text-[1.0625rem] md:text-[1.125rem] leading-[1.75] max-w-[540px] reveal stagger-2" style="color: rgba(255,255,255,0.85); font-family: var(--font-body);">
+        <p class="text-[1.0625rem] md:text-[1.125rem] leading-[1.75] max-w-[540px] mt-6 reveal stagger-2" style="color: rgba(226, 232, 240, 0.9); font-family: var(--font-body);">
           Over $50M in tax saved for 200+ Sydney businesses since 2008. Proactive tax planning, business advisory, and bookkeeping from CPA-qualified partners who know your industry.
         </p>
 
         <div class="mt-10 flex flex-col sm:flex-row gap-4 reveal stagger-3">
-          <a href="/contact#booking" class="inline-flex items-center justify-center gap-2.5 px-8 py-4 text-[0.875rem] font-semibold tracking-[0.02em] rounded-[3px] no-underline transition-all duration-300 hover:opacity-90 hover:shadow-lg" style="background: #FFFFFF; color: #0F1D33;">
+          <a href="/contact#booking" class="inline-flex items-center justify-center gap-2.5 px-8 py-4 text-[0.875rem] font-semibold tracking-[0.01em] rounded-[6px] no-underline transition-all duration-300" style="background: var(--color-emerald); color: #fff;" onmouseover="this.style.background='var(--color-emerald-hover)'" onmouseout="this.style.background='var(--color-emerald)'">
             Book a Free Consultation
             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
-          <a href="#services" class="inline-flex items-center justify-center px-8 py-4 text-[0.875rem] font-semibold tracking-[0.02em] rounded-[3px] no-underline transition-all duration-300 hover:bg-white/10" style="border: 2px solid #FFFFFF; color: #FFFFFF;">See How We Help</a>
-        </div>
-
-        <!-- Scroll indicator -->
-        <div class="hidden lg:flex items-center gap-3 mt-20 reveal stagger-4">
-          <div class="w-px h-8" style="background: linear-gradient(180deg, rgba(255,255,255,0.4), transparent);"></div>
-          <span class="text-[0.625rem] uppercase tracking-[0.2em]" style="color: rgba(255,255,255,0.35);">Scroll to explore</span>
+          <a href="#services" class="inline-flex items-center justify-center px-8 py-4 text-[0.875rem] font-semibold tracking-[0.01em] rounded-[6px] no-underline transition-all duration-300" style="border: 2px solid rgba(255,255,255,0.4); color: #fff;" onmouseover="this.style.borderColor='rgba(255,255,255,0.7)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.4)'">See How We Help</a>
         </div>
       </div>
     </div>
-
-    <!-- Bottom gradient fade -->
-    <div class="absolute bottom-0 left-0 right-0 h-32" style="background: linear-gradient(180deg, transparent, var(--color-bg-primary));"></div>
   </section>
 
-  <!-- Decorative transition: gold rule with diamond -->
-  <div class="flex items-center justify-center gap-3 -mt-4 relative z-10">
-    <div class="w-16 h-px" style="background: linear-gradient(90deg, transparent, var(--color-gold));"></div>
-    <div class="w-2 h-2 rotate-45" style="background: var(--color-gold);"></div>
-    <div class="w-16 h-px" style="background: linear-gradient(90deg, var(--color-gold), transparent);"></div>
-  </div>
+  <!-- ============================================
+       STATS BAR — Professional stat callouts
+       ============================================ -->
+  <section class="relative py-14 md:py-16" style="background: var(--color-slate-deep);">
+    <div class="max-w-[1200px] mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        {stats.map((stat, i) => (
+          <div class={`reveal stagger-${i + 1} text-center`}>
+            <div
+              class="text-[2.25rem] md:text-[2.75rem] font-bold mb-1 tracking-[-0.02em] stat-number"
+              style="color: var(--color-emerald-light);"
+              data-counter
+              data-target={stat.value}
+              data-prefix={stat.prefix || ''}
+              data-suffix={stat.suffix}
+              aria-label={`${stat.prefix || ''}${stat.value}${stat.suffix}`}
+            >
+              0
+            </div>
+            <h3 class="text-[0.8125rem] md:text-[0.875rem] font-semibold mb-1" style="color: #fff; font-family: var(--font-body);">{stat.label}</h3>
+            <p class="text-[0.75rem] leading-[1.6] hidden md:block" style="color: rgba(148, 163, 184, 0.8);">{stat.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
   <!-- ============================================
-       SERVICES — Numbered cards with depth
+       SERVICES — Clean grid with accent top borders
        ============================================ -->
-  <section id="services" class="relative py-28 md:py-36 lg:py-48 overflow-hidden" style="background: var(--color-bg-primary);">
-    <!-- Faint grid pattern -->
-    <div class="absolute inset-0 opacity-[0.02]" style="background-image: linear-gradient(var(--color-navy) 1px, transparent 1px), linear-gradient(90deg, var(--color-navy) 1px, transparent 1px); background-size: 60px 60px;"></div>
-    <!-- Large decorative text -->
-    <div class="absolute top-12 right-0 text-[12rem] lg:text-[18rem] font-bold leading-none select-none pointer-events-none hidden md:block" style="color: var(--color-border-subtle); font-family: var(--font-heading); opacity: 0.4;">W&A</div>
-
-    <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
-      <div class="text-center mb-20 md:mb-24">
-        <div class="section-overline justify-center mb-5 reveal">How We Help</div>
-        <h2 class="reveal stagger-1 gold-underline gold-underline-center inline-block" style="color: var(--color-navy); font-family: var(--font-heading);">
+  <section id="services" class="relative py-24 md:py-32 lg:py-40" style="background: var(--color-bg-primary);">
+    <div class="max-w-[1200px] mx-auto px-6 lg:px-10">
+      <div class="text-center mb-16 md:mb-20">
+        <div class="section-overline justify-center mb-4 reveal">How We Help</div>
+        <h2 class="reveal stagger-1 accent-underline accent-underline-center inline-block">
           Save More Tax. Spend<br class="hidden sm:block"> Less Time on Admin.
         </h2>
-        <p class="mt-6 text-[0.9375rem] leading-[1.7] max-w-lg mx-auto reveal stagger-2" style="color: var(--color-text-secondary);">
+        <p class="mt-8 text-[0.9375rem] leading-[1.7] max-w-lg mx-auto reveal stagger-2" style="color: var(--color-text-secondary);">
           Every service is tailored to your industry, business structure, and growth stage &mdash; so you get advice that actually moves the needle.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {services.map((service, i) => (
-          <div class={`reveal stagger-${i + 1} card service-card-enhanced group p-7 lg:p-8 relative overflow-hidden`}>
-            <!-- Gold top border (hidden, revealed on hover) -->
-            <div class="absolute top-0 left-0 right-0 h-[3px] transition-transform duration-400 origin-left scale-x-0 group-hover:scale-x-100" style="background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light));"></div>
-            <!-- Large background number -->
-            <span class="absolute -bottom-4 -right-2 text-[5rem] font-bold leading-none select-none pointer-events-none" style="color: var(--color-border-subtle); font-family: var(--font-heading); opacity: 0.5;">{service.num}</span>
-            <!-- Content -->
-            <div class="relative z-10">
-              <div class="flex items-start justify-between mb-6">
-                <div class="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(184,146,74,0.15)]" style="background: var(--color-gold-subtle); color: var(--color-gold);" set:html={service.icon} />
-                <span class="text-[0.6875rem] font-semibold tracking-[0.1em]" style="color: var(--color-text-tertiary); font-family: var(--font-body);">{service.num}</span>
-              </div>
-              <h3 class="text-[1.1rem] font-semibold mb-3" style="font-family: var(--font-heading); color: var(--color-navy);">{service.title}</h3>
-              <p class="text-[0.875rem] leading-[1.7] mb-5" style="color: var(--color-text-secondary);">{service.description}</p>
-              <a href="/contact#booking" class="link-hover inline-flex items-center gap-2 text-[0.8125rem] font-semibold no-underline transition-all duration-300" style="color: var(--color-gold);">
-                Learn More
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </a>
+          <div class={`reveal stagger-${i + 1} card card-accent group p-7 lg:p-8`}>
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-11 h-11 rounded-lg flex items-center justify-center" style="background: var(--color-emerald-subtle); color: var(--color-emerald);" set:html={service.icon} />
+              <span class="text-[0.6875rem] font-semibold tracking-[0.08em]" style="color: var(--color-text-tertiary);">{service.num}</span>
             </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Decorative transition -->
-  <div class="relative">
-    <div class="accent-line-h max-w-[1280px] mx-auto"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full" style="background: var(--color-bg-primary); border: 2px solid var(--color-gold);"></div>
-  </div>
-
-  <!-- ============================================
-       WHY CHOOSE US — Stats with rich layering
-       ============================================ -->
-  <section class="relative crosshatch py-28 md:py-36 lg:py-48 bg-texture overflow-hidden" style="background: var(--color-bg-secondary);">
-    <!-- Decorative corner elements -->
-    <div class="absolute top-8 left-8 w-20 h-20 border-l-2 border-t-2 hidden lg:block" style="border-color: var(--color-gold); opacity: 0.15;"></div>
-    <div class="absolute bottom-8 right-8 w-20 h-20 border-r-2 border-b-2 hidden lg:block" style="border-color: var(--color-gold); opacity: 0.15;"></div>
-
-    <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
-      <div class="text-center mb-20 md:mb-24">
-        <div class="section-overline justify-center mb-5 reveal">Why Choose Us</div>
-        <h2 class="reveal stagger-1 gold-underline gold-underline-center inline-block" style="color: var(--color-navy); font-family: var(--font-heading);">
-          Results That Speak<br class="hidden sm:block"> for Themselves
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-        {stats.map((stat, i) => (
-          <div class={`reveal stagger-${i + 1} text-center p-6 md:p-8 rounded-md relative overflow-hidden group`} style="background: var(--color-bg-primary); box-shadow: var(--shadow-sm); border: 1px solid var(--color-border-subtle);">
-            <!-- Gold left accent -->
-            <div class="absolute top-0 left-0 w-[3px] h-full transition-all duration-400" style="background: linear-gradient(180deg, var(--color-gold), var(--color-gold-light)); opacity: 0;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0'"></div>
-            <!-- Subtle radial glow on hover -->
-            <div class="absolute -top-12 -right-12 w-32 h-32 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" style="background: radial-gradient(circle, rgba(184,146,74,0.06), transparent 70%);"></div>
-            <div class="relative z-10">
-              <div
-                class="text-[2.25rem] md:text-[2.75rem] font-bold mb-1 tracking-[-0.02em] stat-glow"
-                style="color: var(--color-gold); font-family: var(--font-heading);"
-                data-counter
-                data-target={stat.value}
-                data-prefix={stat.prefix || ''}
-                data-suffix={stat.suffix}
-                aria-label={`${stat.prefix || ''}${stat.value}${stat.suffix}`}
-              >
-                0
-              </div>
-              <h3 class="text-[0.8125rem] md:text-[0.875rem] font-semibold mb-2 tracking-[-0.01em]" style="color: var(--color-navy); font-family: var(--font-heading);">{stat.label}</h3>
-              <p class="text-[0.75rem] md:text-[0.8125rem] leading-[1.6] hidden md:block" style="color: var(--color-text-secondary);">{stat.desc}</p>
-            </div>
+            <h3 class="text-[1.05rem] font-bold mb-3" style="color: var(--color-slate);">{service.title}</h3>
+            <p class="text-[0.8125rem] leading-[1.7] mb-5" style="color: var(--color-text-secondary);" set:html={service.description}></p>
+            <a href="/contact#booking" class="link-hover inline-flex items-center gap-2 text-[0.8125rem] font-semibold no-underline" style="color: var(--color-emerald);">
+              Learn More
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
           </div>
         ))}
       </div>
@@ -257,73 +192,60 @@ const articles = [
   </section>
 
   <!-- ============================================
-       TRUSTED BY — Clean logo bar with separators
+       TRUSTED BY — Clean logo row
        ============================================ -->
-  <section class="relative py-14 md:py-18 overflow-hidden" style="background: var(--color-bg-primary);">
-    <div class="absolute top-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, var(--color-border), transparent);"></div>
-    <div class="absolute bottom-0 left-0 right-0 h-px" style="background: linear-gradient(90deg, transparent, var(--color-border), transparent);"></div>
-    <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
+  <section class="py-12 md:py-14" style="background: var(--color-bg-alt); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+    <div class="max-w-[1200px] mx-auto px-6 lg:px-10">
       <p class="text-center text-[0.6875rem] font-semibold uppercase tracking-[0.14em] mb-8 reveal" style="color: var(--color-text-tertiary);">
         Trusted by leading Sydney businesses
       </p>
       <div class="flex flex-wrap justify-center items-center gap-y-4 max-w-4xl mx-auto reveal-fade">
-        <span class="whitespace-nowrap px-5 md:px-7 text-[0.8rem] font-bold uppercase tracking-[0.1em] cursor-default transition-colors duration-300" style="color: #B0B8C4; font-family: system-ui, sans-serif;" onmouseover="this.style.color='#1B2B4B'" onmouseout="this.style.color='#B0B8C4'">Harbour Construction</span>
+        <span class="whitespace-nowrap px-5 md:px-7 text-[0.8rem] font-bold uppercase tracking-[0.1em] cursor-default transition-colors duration-300" style="color: #94A3B8; font-family: system-ui, sans-serif;" onmouseover="this.style.color='var(--color-slate)'" onmouseout="this.style.color='#94A3B8'">Harbour Construction</span>
         <span class="hidden sm:block w-px h-4" style="background: var(--color-border);"></span>
-        <span class="whitespace-nowrap px-5 md:px-7 text-[0.95rem] font-light italic cursor-default transition-colors duration-300" style="color: #B0B8C4; font-family: var(--font-heading);" onmouseover="this.style.color='#1B2B4B'" onmouseout="this.style.color='#B0B8C4'">Meridian Property</span>
+        <span class="whitespace-nowrap px-5 md:px-7 text-[0.95rem] font-light italic cursor-default transition-colors duration-300" style="color: #94A3B8; font-family: var(--font-heading);" onmouseover="this.style.color='var(--color-slate)'" onmouseout="this.style.color='#94A3B8'">Meridian Property</span>
         <span class="hidden sm:block w-px h-4" style="background: var(--color-border);"></span>
-        <span class="whitespace-nowrap px-5 md:px-7 text-[0.85rem] font-medium cursor-default transition-colors duration-300" style="color: #B0B8C4; font-family: var(--font-body); letter-spacing: 0.02em;" onmouseover="this.style.color='#1B2B4B'" onmouseout="this.style.color='#B0B8C4'">Coastal Dining Co</span>
+        <span class="whitespace-nowrap px-5 md:px-7 text-[0.85rem] font-medium cursor-default transition-colors duration-300" style="color: #94A3B8; font-family: var(--font-body); letter-spacing: 0.02em;" onmouseover="this.style.color='var(--color-slate)'" onmouseout="this.style.color='#94A3B8'">Coastal Dining Co</span>
         <span class="hidden sm:block w-px h-4" style="background: var(--color-border);"></span>
-        <span class="whitespace-nowrap px-5 md:px-7 text-[0.75rem] font-bold uppercase tracking-[0.06em] cursor-default transition-colors duration-300" style="color: #B0B8C4; font-family: system-ui, sans-serif;" onmouseover="this.style.color='#1B2B4B'" onmouseout="this.style.color='#B0B8C4'">TechBridge Solutions</span>
+        <span class="whitespace-nowrap px-5 md:px-7 text-[0.75rem] font-bold uppercase tracking-[0.06em] cursor-default transition-colors duration-300" style="color: #94A3B8; font-family: system-ui, sans-serif;" onmouseover="this.style.color='var(--color-slate)'" onmouseout="this.style.color='#94A3B8'">TechBridge Solutions</span>
         <span class="hidden sm:block w-px h-4" style="background: var(--color-border);"></span>
-        <span class="whitespace-nowrap px-5 md:px-7 text-[0.9rem] font-normal cursor-default transition-colors duration-300" style="color: #B0B8C4; font-family: var(--font-heading); letter-spacing: 0.02em;" onmouseover="this.style.color='#1B2B4B'" onmouseout="this.style.color='#B0B8C4'">Greenfield Medical</span>
+        <span class="whitespace-nowrap px-5 md:px-7 text-[0.9rem] font-normal cursor-default transition-colors duration-300" style="color: #94A3B8; font-family: var(--font-heading); letter-spacing: 0.02em;" onmouseover="this.style.color='var(--color-slate)'" onmouseout="this.style.color='#94A3B8'">Greenfield Medical</span>
         <span class="hidden sm:block w-px h-4" style="background: var(--color-border);"></span>
-        <span class="whitespace-nowrap px-5 md:px-7 text-[0.85rem] font-semibold cursor-default transition-colors duration-300" style="color: #B0B8C4; font-family: var(--font-heading); letter-spacing: 0.05em; font-variant: small-caps;" onmouseover="this.style.color='#1B2B4B'" onmouseout="this.style.color='#B0B8C4'">Atlas Legal Partners</span>
+        <span class="whitespace-nowrap px-5 md:px-7 text-[0.85rem] font-semibold cursor-default transition-colors duration-300" style="color: #94A3B8; font-family: var(--font-heading); letter-spacing: 0.05em; font-variant: small-caps;" onmouseover="this.style.color='var(--color-slate)'" onmouseout="this.style.color='#94A3B8'">Atlas Legal Partners</span>
       </div>
     </div>
   </section>
 
   <!-- ============================================
-       TESTIMONIALS — Rich editorial design
+       TESTIMONIALS — Clean two-column layout
        ============================================ -->
-  <section class="relative py-28 md:py-36 lg:py-48 overflow-hidden" style="background: var(--color-bg-primary);">
-    <!-- Subtle background image -->
-    <div class="absolute inset-0 opacity-[0.02]" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&h=900&fit=crop'); background-size: cover; background-position: center;"></div>
-    <!-- Decorative vertical line -->
-    <div class="absolute top-0 left-1/2 w-px h-20 hidden lg:block" style="background: linear-gradient(180deg, var(--color-border), transparent);"></div>
-
-    <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
-      <div class="text-center mb-20 md:mb-24">
-        <div class="section-overline justify-center mb-5 reveal">Testimonials</div>
-        <h2 class="reveal stagger-1 gold-underline gold-underline-center inline-block" style="color: var(--color-navy); font-family: var(--font-heading);">
+  <section class="relative py-24 md:py-32 lg:py-40" style="background: var(--color-bg-primary);">
+    <div class="max-w-[1200px] mx-auto px-6 lg:px-10">
+      <div class="text-center mb-16 md:mb-20">
+        <div class="section-overline justify-center mb-4 reveal">Testimonials</div>
+        <h2 class="reveal stagger-1 accent-underline accent-underline-center inline-block">
           Hear It from Business<br class="hidden sm:block"> Owners Like You
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8" data-testimonials>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-testimonials>
         {testimonials.map((t, i) => (
-          <div class={`reveal stagger-${i + 1} relative p-8 md:p-9 rounded-md group`} style="background: var(--color-bg-secondary); border: 1px solid var(--color-border-subtle);">
-            <!-- Gold left border accent -->
-            <div class="absolute top-6 bottom-6 left-0 w-[3px] rounded-full" style="background: linear-gradient(180deg, var(--color-gold), var(--color-gold-light));"></div>
-            <!-- Large decorative quote -->
-            <span class="absolute top-4 right-6 text-[5rem] leading-none select-none pointer-events-none" style="color: var(--color-gold); opacity: 0.08; font-family: var(--font-heading);">&rdquo;</span>
-
-            <blockquote class="relative z-10 pt-2 pl-4">
+          <div class={`reveal stagger-${i + 1} card card-accent p-7 md:p-8`}>
+            <blockquote>
               <!-- Star rating -->
               <div class="flex gap-1 mb-4">
                 {[1,2,3,4,5].map(() => (
-                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20" style="color: var(--color-gold);"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20" style="color: #F59E0B;"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                 ))}
               </div>
-              <p class="text-[0.9375rem] leading-[1.8] mb-7" style="color: var(--color-text-primary); font-style: italic; font-family: var(--font-body);">
+              <p class="text-[0.9375rem] leading-[1.8] mb-7 italic" style="color: var(--color-text-primary);">
                 &ldquo;{t.quote}&rdquo;
               </p>
-              <!-- Attribution with avatar -->
-              <footer class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full flex items-center justify-center text-[0.6875rem] font-bold tracking-[0.05em]" style="background: var(--color-gold-subtle); color: var(--color-gold); font-family: var(--font-body);">
+              <footer class="flex items-center gap-3 pt-5" style="border-top: 1px solid var(--color-border);">
+                <div class="w-10 h-10 rounded-full flex items-center justify-center text-[0.6875rem] font-bold tracking-[0.05em]" style="background: var(--color-emerald-subtle); color: var(--color-emerald);">
                   {t.initials}
                 </div>
                 <div>
-                  <p class="text-[0.8125rem] font-semibold" style="color: var(--color-navy);">{t.name}</p>
+                  <p class="text-[0.8125rem] font-semibold" style="color: var(--color-slate);">{t.name}</p>
                   <p class="text-[0.75rem]" style="color: var(--color-text-secondary);">{t.title}</p>
                 </div>
               </footer>
@@ -334,60 +256,45 @@ const articles = [
     </div>
   </section>
 
-  <!-- Decorative transition with text -->
-  <div class="relative py-6" style="background: var(--color-bg-primary);">
-    <div class="flex items-center justify-center gap-4 max-w-[1280px] mx-auto px-6">
-      <div class="flex-1 h-px" style="background: linear-gradient(90deg, transparent, var(--color-border));"></div>
-      <span class="text-[0.625rem] font-semibold uppercase tracking-[0.2em] px-4" style="color: var(--color-text-tertiary);">Latest thinking</span>
-      <div class="flex-1 h-px" style="background: linear-gradient(90deg, var(--color-border), transparent);"></div>
-    </div>
-  </div>
-
   <!-- ============================================
-       LATEST INSIGHTS — Magazine-style with depth
+       LATEST INSIGHTS — Clean magazine grid
        ============================================ -->
-  <section class="relative crosshatch py-28 md:py-36 lg:py-48 bg-texture overflow-hidden" style="background: var(--color-bg-secondary);">
-    <!-- Decorative large number -->
-    <div class="absolute -bottom-8 -left-4 text-[14rem] font-bold leading-none select-none pointer-events-none hidden lg:block" style="color: var(--color-border-light); font-family: var(--font-heading); opacity: 0.3;">&sect;</div>
-
-    <div class="relative max-w-[1280px] mx-auto px-6 lg:px-10">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 md:mb-24 gap-4">
+  <section class="relative py-24 md:py-32 lg:py-40" style="background: var(--color-bg-alt);">
+    <div class="max-w-[1200px] mx-auto px-6 lg:px-10">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 md:mb-20 gap-4">
         <div>
-          <div class="section-overline mb-5 reveal">From Our Blog</div>
-          <h2 class="reveal stagger-1 gold-underline inline-block" style="color: var(--color-navy); font-family: var(--font-heading);">
+          <div class="section-overline mb-4 reveal">From Our Blog</div>
+          <h2 class="reveal stagger-1 accent-underline inline-block">
             Latest Insights
           </h2>
         </div>
-        <a href="/insights" class="reveal link-hover inline-flex items-center gap-2 text-[0.8125rem] font-semibold no-underline transition-all duration-300" style="color: var(--color-gold);">
+        <a href="/insights" class="reveal link-hover inline-flex items-center gap-2 text-[0.8125rem] font-semibold no-underline" style="color: var(--color-emerald);">
           View All Insights
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {articles.map((article, i) => (
           <article class={`reveal stagger-${i + 1} card blog-card group overflow-hidden`}>
             <div class="aspect-[16/10] overflow-hidden relative">
-              <img src={article.image} alt={article.alt} class="w-full h-full object-cover transition-transform duration-600 group-hover:scale-[1.04]" loading="lazy" />
-              <!-- Image overlay gradient -->
-              <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
-              <!-- Category badge on image -->
-              <span class="absolute top-4 left-4 text-[0.625rem] font-semibold uppercase tracking-[0.12em] px-3 py-[5px] rounded-sm" style={`background: ${article.category === 'Tax' ? 'rgba(184,146,74,0.9)' : article.category === 'Business' ? 'rgba(27,43,75,0.85)' : 'rgba(74,85,104,0.85)'}; color: #fff; backdrop-filter: blur(4px);`}>
+              <img src={article.image} alt={article.alt} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
+              <span class="absolute top-4 left-4 text-[0.625rem] font-semibold uppercase tracking-[0.12em] px-3 py-[5px] rounded-[4px]" style={`background: ${article.category === 'Tax' ? 'var(--color-emerald)' : article.category === 'Business' ? 'var(--color-slate)' : 'var(--color-slate-mid)'}; color: #fff;`}>
                 {article.category}
               </span>
             </div>
             <div class="p-6 md:p-7">
-              <h3 class="text-[1.05rem] font-semibold mb-2.5 leading-[1.35]" style="font-family: var(--font-heading); color: var(--color-navy);">{article.title}</h3>
+              <h3 class="text-[1.05rem] font-bold mb-2.5 leading-[1.35]" style="color: var(--color-slate);">{article.title}</h3>
               <p class="text-[0.8125rem] mb-5 line-clamp-2 leading-[1.7]" style="color: var(--color-text-secondary);">{article.excerpt}</p>
-              <div class="flex items-center justify-between pt-4" style="border-top: 1px solid var(--color-border-subtle);">
+              <div class="flex items-center justify-between pt-4" style="border-top: 1px solid var(--color-border);">
                 <div class="flex items-center gap-2">
-                  <span class="text-[0.6875rem] tracking-[0.01em]" style="color: var(--color-text-tertiary);">{article.date}</span>
+                  <span class="text-[0.6875rem]" style="color: var(--color-text-tertiary);">{article.date}</span>
                   <span class="w-1 h-1 rounded-full" style="background: var(--color-border);"></span>
-                  <span class="text-[0.6875rem] tracking-[0.01em]" style="color: var(--color-text-tertiary);">{article.readTime}</span>
+                  <span class="text-[0.6875rem]" style="color: var(--color-text-tertiary);">{article.readTime}</span>
                 </div>
-                <span class="inline-flex items-center gap-1.5 text-[0.8125rem] font-semibold" style="color: var(--color-gold);">
+                <span class="inline-flex items-center gap-1.5 text-[0.8125rem] font-semibold" style="color: var(--color-emerald);">
                   Read
-                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                 </span>
               </div>
             </div>
@@ -398,48 +305,30 @@ const articles = [
   </section>
 
   <!-- ============================================
-       CTA — Dramatic, dark, layered
+       CTA — Dark, authoritative
        ============================================ -->
-  <section class="relative py-28 md:py-36 overflow-hidden" style="background: var(--color-navy-deep);">
+  <section class="relative py-24 md:py-32 overflow-hidden" style="background: var(--color-slate-deep);">
     <!-- Background image -->
-    <div class="absolute inset-0 opacity-[0.2]" style="background-image: url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1600&h=900&fit=crop'); background-size: cover; background-position: center;"></div>
-    <!-- Gradient overlay -->
-    <div class="absolute inset-0 bg-gradient-to-b from-[#0F1D33]/80 via-transparent to-[#0F1D33]/90"></div>
-    <!-- Gold top accent -->
-    <div class="absolute top-0 left-0 right-0 h-[2px]" style="background: linear-gradient(90deg, transparent, var(--color-gold), transparent);"></div>
-    <!-- Grain texture -->
-    <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%270 0 256 256%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27n%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%270.9%27 numOctaves=%274%27 stitchTiles=%27stitch%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23n)%27/%3E%3C/svg%3E'); background-size: 256px;"></div>
+    <div class="absolute inset-0 opacity-[0.15]" style="background-image: url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1600&h=900&fit=crop'); background-size: cover; background-position: center;"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0F172A]/70 via-transparent to-[#0F172A]/80"></div>
 
-    <!-- Decorative corner brackets -->
-    <div class="absolute top-10 left-10 w-12 h-12 border-l border-t hidden lg:block" style="border-color: rgba(212,185,120,0.2);"></div>
-    <div class="absolute bottom-10 right-10 w-12 h-12 border-r border-b hidden lg:block" style="border-color: rgba(212,185,120,0.2);"></div>
-
-    <div class="relative max-w-[640px] mx-auto px-6 lg:px-10 text-center">
-      <div class="flex items-center justify-center gap-3 mb-6 reveal">
-        <span class="w-2 h-2 rounded-full" style="background: var(--color-gold);"></span>
-        <span class="text-[0.75rem] font-semibold tracking-[0.15em] uppercase" style="color: var(--color-gold-light);">Get Started</span>
-        <span class="w-2 h-2 rounded-full" style="background: var(--color-gold);"></span>
+    <div class="relative max-w-[620px] mx-auto px-6 lg:px-10 text-center">
+      <div class="section-overline justify-center mb-4 reveal" style="color: var(--color-emerald-light);">
+        Get Started
       </div>
-      <h2 class="mb-5 reveal stagger-1" style="color: #FFFFFF; font-family: var(--font-heading);">
+      <h2 class="mb-5 reveal stagger-1 text-white">
         Find Out How Much<br class="hidden sm:block"> You Could Be Saving
       </h2>
-      <!-- Gold accent bar -->
-      <div class="flex items-center justify-center gap-2 mb-8 reveal stagger-1">
-        <div class="w-8 h-[2px]" style="background: var(--color-gold); opacity: 0.5;"></div>
-        <div class="w-16 h-[2px]" style="background: var(--color-gold);"></div>
-        <div class="w-8 h-[2px]" style="background: var(--color-gold); opacity: 0.5;"></div>
-      </div>
-      <p class="text-[1rem] leading-[1.75] mb-10 reveal stagger-2" style="color: rgba(200, 210, 220, 0.95);">
+      <p class="text-[1rem] leading-[1.75] mb-10 reveal stagger-2" style="color: rgba(203, 213, 225, 0.9);">
         Book a free 30-minute consultation with a senior partner. No obligation, no jargon &mdash; just clear, actionable advice tailored to your situation.
       </p>
       <div class="reveal stagger-3">
-        <a href="/contact#booking" class="inline-flex items-center justify-center gap-2.5 px-9 py-4 text-[0.875rem] font-semibold tracking-[0.02em] rounded-[3px] no-underline transition-all duration-400" style="background: var(--color-gold); color: #fff; box-shadow: var(--shadow-gold);" onmouseover="this.style.background='var(--color-gold-hover)';this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 32px rgba(184,146,74,0.25)'" onmouseout="this.style.background='var(--color-gold)';this.style.transform='translateY(0)';this.style.boxShadow='var(--shadow-gold)'">
+        <a href="/contact#booking" class="inline-flex items-center justify-center gap-2.5 px-9 py-4 text-[0.875rem] font-semibold tracking-[0.01em] rounded-[6px] no-underline transition-all duration-300" style="background: var(--color-emerald); color: #fff;" onmouseover="this.style.background='var(--color-emerald-hover)'" onmouseout="this.style.background='var(--color-emerald)'">
           Book a Free Consultation
           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
       </div>
-      <!-- Trust line -->
-      <p class="mt-8 text-[0.6875rem] tracking-[0.04em] reveal stagger-4" style="color: rgba(180, 190, 205, 0.75);">
+      <p class="mt-8 text-[0.6875rem] tracking-[0.04em] reveal stagger-4" style="color: rgba(148, 163, 184, 0.7);">
         No credit card required &middot; Free 30-minute session &middot; Speak directly with a partner
       </p>
     </div>

@@ -7,16 +7,16 @@ const links = [
 ];
 ---
 
-<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 nav-frosted border-b transition-all duration-500" style="border-color: rgba(226, 228, 232, 0.5);">
-  <div class="max-w-[1280px] mx-auto px-6 lg:px-10">
-    <div class="flex items-center justify-between h-[72px] md:h-[80px]">
+<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 nav-frosted transition-all duration-500" style="border-bottom: 1px solid rgba(226, 232, 240, 0.5);">
+  <div class="max-w-[1200px] mx-auto px-6 lg:px-10">
+    <div class="flex items-center justify-between h-[68px] md:h-[76px]">
       <!-- Logo -->
       <a href="/" class="flex items-center gap-0 no-underline group">
-        <span class="text-[1.35rem] md:text-[1.5rem] font-bold tracking-[-0.02em]" style="font-family: var(--font-heading); color: var(--color-navy);">
+        <span class="text-[1.25rem] md:text-[1.4rem] font-bold tracking-[-0.01em]" style="font-family: var(--font-heading); color: var(--color-slate);">
           Whitfield
         </span>
-        <span class="text-[1.35rem] md:text-[1.5rem] font-bold mx-[2px]" style="font-family: var(--font-heading); color: var(--color-gold);">&amp;</span>
-        <span class="text-[1.35rem] md:text-[1.5rem] font-bold tracking-[-0.02em]" style="font-family: var(--font-heading); color: var(--color-navy);">
+        <span class="text-[1.25rem] md:text-[1.4rem] font-bold mx-[3px]" style="font-family: var(--font-heading); color: var(--color-emerald);">&amp;</span>
+        <span class="text-[1.25rem] md:text-[1.4rem] font-bold tracking-[-0.01em]" style="font-family: var(--font-heading); color: var(--color-slate);">
           Associates
         </span>
       </a>
@@ -26,21 +26,18 @@ const links = [
         {links.map(link => (
           <a
             href={link.href}
-            class="link-hover text-[0.8125rem] font-medium tracking-[0.02em] transition-colors duration-300 no-underline"
+            class="link-hover text-[0.8125rem] font-medium tracking-[0.01em] no-underline"
             style={currentPath === link.href
-              ? `color: var(--color-navy); font-weight: 600;`
+              ? `color: var(--color-slate); font-weight: 600;`
               : `color: var(--color-slate-light);`}
           >
             {link.name}
-            {currentPath === link.href && (
-              <span class="absolute bottom-[-2px] left-0 w-full h-[1.5px]" style="background: var(--color-gold);"></span>
-            )}
           </a>
         ))}
       </div>
 
       <!-- CTA Button (Desktop) -->
-      <a href="/contact" class="hidden md:inline-flex items-center gap-2 px-6 py-[10px] text-[0.8125rem] font-semibold tracking-[0.02em] rounded-[3px] no-underline transition-all duration-300" style="background: var(--color-navy); color: #fff; border: 1.5px solid var(--color-navy);" onmouseover="this.style.background='var(--color-navy-light)';this.style.boxShadow='0 2px 8px rgba(27,43,75,0.2)'" onmouseout="this.style.background='var(--color-navy)';this.style.boxShadow='none'">
+      <a href="/contact" class="hidden md:inline-flex items-center gap-2 px-5 py-[10px] text-[0.8125rem] font-semibold tracking-[0.01em] rounded-[6px] no-underline transition-all duration-300" style="background: var(--color-emerald); color: #fff;" onmouseover="this.style.background='var(--color-emerald-hover)'" onmouseout="this.style.background='var(--color-emerald)'">
         Free Consultation
       </a>
 
@@ -51,28 +48,28 @@ const links = [
         aria-label="Toggle navigation menu"
         aria-expanded="false"
       >
-        <span class="block w-[22px] h-[1.5px] rounded-full transition-all duration-300" style="background: var(--color-navy);"></span>
-        <span class="block w-[22px] h-[1.5px] rounded-full transition-all duration-300" style="background: var(--color-navy);"></span>
-        <span class="block w-[15px] h-[1.5px] rounded-full transition-all duration-300 ml-auto" style="background: var(--color-navy);"></span>
+        <span class="block w-[22px] h-[1.5px] rounded-full transition-all duration-300" style="background: var(--color-slate);"></span>
+        <span class="block w-[22px] h-[1.5px] rounded-full transition-all duration-300" style="background: var(--color-slate);"></span>
+        <span class="block w-[15px] h-[1.5px] rounded-full transition-all duration-300 ml-auto" style="background: var(--color-slate);"></span>
       </button>
     </div>
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="md:hidden max-h-0 opacity-0 overflow-hidden transition-all duration-400 bg-white/95 backdrop-blur-md" style="border-top: 1px solid var(--color-border-subtle);">
+  <div id="mobile-menu" class="md:hidden max-h-0 opacity-0 overflow-hidden transition-all duration-400 bg-white/95 backdrop-blur-md" style="border-top: 1px solid var(--color-border);">
     <div class="px-6 py-8 flex flex-col gap-1">
       {links.map(link => (
         <a
           href={link.href}
           class="text-[0.9375rem] font-medium no-underline py-3 px-3 rounded-md transition-all duration-200"
           style={currentPath === link.href
-            ? `color: var(--color-navy); font-weight: 700; background: var(--color-gold-subtle);`
-            : `color: var(--color-slate);`}
+            ? `color: var(--color-slate); font-weight: 700; background: var(--color-emerald-subtle);`
+            : `color: var(--color-text-secondary);`}
         >
           {link.name}
         </a>
       ))}
-      <div class="mt-4 pt-4" style="border-top: 1px solid var(--color-border-subtle);">
+      <div class="mt-4 pt-4" style="border-top: 1px solid var(--color-border);">
         <a href="/contact" class="btn-primary text-center text-[0.8125rem] w-full">
           Book a Free Consultation
         </a>
