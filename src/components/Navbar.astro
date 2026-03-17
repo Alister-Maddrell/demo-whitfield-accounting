@@ -7,73 +7,44 @@ const links = [
 ];
 ---
 
-<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 nav-frosted transition-all duration-500" style="border-bottom: 1px solid rgba(226, 232, 240, 0.5);">
-  <div class="max-w-[1200px] mx-auto px-6 lg:px-10">
-    <div class="flex items-center justify-between h-[68px] md:h-[76px]">
-      <!-- Logo -->
-      <a href="/" class="flex items-center gap-0 no-underline group">
-        <span class="text-[1.25rem] md:text-[1.4rem] font-bold tracking-[-0.01em]" style="font-family: var(--font-heading); color: var(--color-slate);">
-          Whitfield
-        </span>
-        <span class="text-[1.25rem] md:text-[1.4rem] font-bold mx-[3px]" style="font-family: var(--font-heading); color: var(--color-emerald);">&amp;</span>
-        <span class="text-[1.25rem] md:text-[1.4rem] font-bold tracking-[-0.01em]" style="font-family: var(--font-heading); color: var(--color-slate);">
-          Associates
-        </span>
+<div class="nav-wrap" id="nav-wrap">
+  <nav class="nav-bar" id="main-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        Whitfield<span class="nav-logo-amp">&</span>Associates
       </a>
 
-      <!-- Desktop Nav -->
-      <div class="hidden md:flex items-center gap-8 lg:gap-10">
+      <div class="nav-links hidden md:flex">
         {links.map(link => (
-          <a
-            href={link.href}
-            class="link-hover text-[0.8125rem] font-medium tracking-[0.01em] no-underline"
-            style={currentPath === link.href
-              ? `color: var(--color-slate); font-weight: 600;`
-              : `color: var(--color-slate-light);`}
-          >
+          <a href={link.href} class={`nav-link ${currentPath === link.href ? 'active' : ''}`}>
             {link.name}
           </a>
         ))}
       </div>
 
-      <!-- CTA Button (Desktop) -->
-      <a href="/contact" class="hidden md:inline-flex items-center gap-2 px-5 py-[10px] text-[0.8125rem] font-semibold tracking-[0.01em] rounded-[6px] no-underline transition-all duration-300" style="background: var(--color-emerald); color: #fff;" onmouseover="this.style.background='var(--color-emerald-hover)'" onmouseout="this.style.background='var(--color-emerald)'">
-        Free Consultation
-      </a>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="/contact#booking" class="nav-cta">
+          Book Consultation
+        </a>
+      </div>
 
-      <!-- Hamburger (Mobile) -->
-      <button
-        id="mobile-menu-btn"
-        class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-[5px] rounded-sm"
-        aria-label="Toggle navigation menu"
-        aria-expanded="false"
-      >
-        <span class="block w-[22px] h-[1.5px] rounded-full transition-all duration-300" style="background: var(--color-slate);"></span>
-        <span class="block w-[22px] h-[1.5px] rounded-full transition-all duration-300" style="background: var(--color-slate);"></span>
-        <span class="block w-[15px] h-[1.5px] rounded-full transition-all duration-300 ml-auto" style="background: var(--color-slate);"></span>
+      <button class="nav-burger md:hidden" id="mobile-menu-btn" aria-label="Open menu">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
       </button>
     </div>
-  </div>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="md:hidden max-h-0 opacity-0 overflow-hidden transition-all duration-400 bg-white/95 backdrop-blur-md" style="border-top: 1px solid var(--color-border);">
-    <div class="px-6 py-8 flex flex-col gap-1">
-      {links.map(link => (
-        <a
-          href={link.href}
-          class="text-[0.9375rem] font-medium no-underline py-3 px-3 rounded-md transition-all duration-200"
-          style={currentPath === link.href
-            ? `color: var(--color-slate); font-weight: 700; background: var(--color-emerald-subtle);`
-            : `color: var(--color-text-secondary);`}
-        >
-          {link.name}
-        </a>
-      ))}
-      <div class="mt-4 pt-4" style="border-top: 1px solid var(--color-border);">
-        <a href="/contact" class="btn-primary text-center text-[0.8125rem] w-full">
-          Book a Free Consultation
+    <div class="nav-mobile md:hidden" id="mobile-menu">
+      <div class="nav-mobile-inner">
+        {links.map(link => (
+          <a href={link.href} class="nav-mobile-link">{link.name}</a>
+        ))}
+        <div class="nav-mobile-divider"></div>
+        <a href="/contact#booking" class="nav-cta nav-cta-mobile">
+          Book Consultation
         </a>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</div>
