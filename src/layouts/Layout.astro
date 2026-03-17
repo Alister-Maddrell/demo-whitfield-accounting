@@ -74,6 +74,9 @@ const { title, description = 'Sydney CBD accountants trusted by 200+ businesses 
   </main>
 
   <script>
+    // Enable reveal animations only after JS loads (prevents invisible content on static render)
+    document.documentElement.classList.add('reveal-ready');
+
     // Scroll-triggered reveal animations (IntersectionObserver)
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -81,7 +84,7 @@ const { title, description = 'Sydney CBD accountants trusted by 200+ businesses 
           entry.target.classList.add('visible');
         }
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+    }, { threshold: 0.01, rootMargin: '0px 0px -20px 0px' });
 
     document.querySelectorAll('.reveal, .reveal-fade, .reveal-scale').forEach(el => revealObserver.observe(el));
 
