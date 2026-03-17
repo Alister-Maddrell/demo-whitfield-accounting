@@ -343,6 +343,14 @@ input[type="radio"]:checked::after {
   color: var(--color-emerald);
 }
 
+/* Arrow slides right on hover */
+.link-hover svg {
+  transition: transform 0.3s ease;
+}
+.link-hover:hover svg {
+  transform: translateX(4px);
+}
+
 /* ============================================
    NAV
    ============================================ */
