@@ -463,6 +463,24 @@ input[type="radio"]:checked::after {
 }
 
 /* ============================================
+   FULL HD VIEWPORT — Fill hero at 1920×1080
+   ============================================ */
+@media (min-width: 1200px) and (min-height: 960px) {
+  /* Hero — constrain to viewport, content already flex-centered via HTML */
+  section:first-of-type {
+    min-height: calc(100vh - 81px);
+    min-height: calc(100dvh - 81px);
+    max-height: calc(100vh - 81px);
+    overflow: hidden;
+  }
+
+  /* Bigger heading */
+  section:first-of-type h1 {
+    font-size: clamp(2.5rem, 3.5vw + 0.8rem, 4rem);
+  }
+}
+
+/* ============================================
    LAPTOP VIEWPORT — Tighter spacing for ≤900px height
    ============================================ */
 @media (min-width: 1024px) and (max-height: 900px) {
