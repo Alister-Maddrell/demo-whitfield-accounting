@@ -94,37 +94,70 @@ const articles = [
   <Navbar />
 
   <!-- ============================================
-       HERO — Clean, authoritative, structured
+       HERO — Full-viewport, editorial, authoritative
        ============================================ -->
-  <section class="relative pt-32 pb-20 md:pt-44 md:pb-32 lg:pt-52 lg:pb-40 overflow-hidden">
-    <!-- Hero background image -->
-    <div class="absolute inset-0" style="background-image: url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1600&h=900&fit=crop'); background-size: cover; background-position: center bottom;"></div>
-    <!-- Dark overlay — strong enough for WCAG contrast over busy photo -->
-    <div class="absolute inset-0 bg-gradient-to-r from-[#0F172A]/80 via-[#0F172A]/70 to-[#0F172A]/45"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A]/40 via-[#0F172A]/25 to-[#0F172A]/10"></div>
+  <section class="hero-section relative overflow-hidden flex flex-col">
+    <!-- Hero background image — Sydney harbour, prominent -->
+    <div class="absolute inset-0" style="background-image: url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1920&h=1080&fit=crop&q=80'); background-size: cover; background-position: center 40%;"></div>
+    <!-- Gradient overlays — left-heavy for text, lighter on right to show harbour -->
+    <div class="absolute inset-0" style="background: linear-gradient(105deg, rgba(15,23,42,0.92) 0%, rgba(15,23,42,0.78) 40%, rgba(15,23,42,0.35) 70%, rgba(15,23,42,0.18) 100%);"></div>
+    <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(15,23,42,0.15) 0%, transparent 30%, transparent 70%, rgba(15,23,42,0.6) 100%);"></div>
 
-    <div class="relative max-w-[1200px] mx-auto px-6 lg:px-10">
-      <div class="max-w-[640px] relative rounded-xl px-8 py-10 md:px-10 md:py-12" style="background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
-        <!-- Overline -->
-        <div class="flex items-center gap-3 mb-6 reveal">
-          <div class="w-5 h-[2px] bg-emerald-400"></div>
-          <span class="text-[0.75rem] font-semibold tracking-[0.14em] uppercase text-emerald-300">Established 2008 &middot; Sydney CBD</span>
+    <!-- Main content — vertically centered -->
+    <div class="relative flex-1 flex items-center">
+      <div class="max-w-[1200px] w-full mx-auto px-6 lg:px-10 py-12">
+        <div class="max-w-[660px]">
+          <!-- Overline -->
+          <div class="flex items-center gap-3 mb-7 reveal">
+            <div class="w-8 h-[2px]" style="background: var(--color-emerald-light);"></div>
+            <span class="text-[0.75rem] font-semibold tracking-[0.16em] uppercase" style="color: var(--color-emerald-light); font-family: var(--font-body);">Established 2008 &middot; Sydney CBD</span>
+          </div>
+
+          <!-- Heading -->
+          <h1 class="reveal stagger-1 hero-text-shadow" style="font-family: var(--font-heading); letter-spacing: -0.025em; color: #F8FAFC; line-height: 1.08;">
+            Keep More of What<br class="hidden sm:block"> You Earn. Grow What<br class="hidden sm:block"> You&rsquo;ve Built.
+          </h1>
+
+          <!-- Body -->
+          <p class="text-[1.0625rem] md:text-[1.15rem] leading-[1.75] max-w-[560px] mt-7 reveal stagger-2 hero-text-shadow" style="color: rgba(226, 232, 240, 0.92); font-family: var(--font-body);">
+            Over $50M in tax saved for 200+ Sydney businesses since 2008. Proactive tax planning, business advisory, and bookkeeping from CPA-qualified partners who know your industry.
+          </p>
+
+          <!-- CTAs -->
+          <div class="mt-10 flex flex-col sm:flex-row gap-4 reveal stagger-3">
+            <a href="/contact#booking" class="hero-cta-primary inline-flex items-center justify-center gap-2.5 px-9 py-[1.05rem] text-[0.9rem] font-semibold tracking-[0.01em] rounded-[6px] no-underline transition-all duration-300" style="background: var(--color-emerald); color: #fff; box-shadow: 0 2px 8px rgba(22, 101, 52, 0.3), 0 4px 16px rgba(22, 101, 52, 0.15);" onmouseover="this.style.background='var(--color-emerald-hover)'; this.style.boxShadow='0 4px 12px rgba(22, 101, 52, 0.35), 0 8px 24px rgba(22, 101, 52, 0.2)'; this.style.transform='translateY(-1px)'" onmouseout="this.style.background='var(--color-emerald)'; this.style.boxShadow='0 2px 8px rgba(22, 101, 52, 0.3), 0 4px 16px rgba(22, 101, 52, 0.15)'; this.style.transform='translateY(0)'">
+              Book a Free Consultation
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="#services" class="inline-flex items-center justify-center px-8 py-[1.05rem] text-[0.875rem] font-semibold tracking-[0.01em] rounded-[6px] no-underline transition-all duration-300" style="border: 2px solid rgba(255,255,255,0.35); color: #fff;" onmouseover="this.style.borderColor='rgba(255,255,255,0.7)'; this.style.background='rgba(255,255,255,0.06)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.35)'; this.style.background='transparent'">See How We Help</a>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <h1 class="reveal stagger-1 hero-text-shadow" style="font-family: var(--font-heading); letter-spacing: -0.02em; color: #F8FAFC;">
-          Keep More of What<br class="hidden sm:block"> You Earn. Grow What<br class="hidden sm:block"> You&rsquo;ve Built.
-        </h1>
-
-        <p class="text-[1.0625rem] md:text-[1.125rem] leading-[1.75] max-w-[540px] mt-6 reveal stagger-2 hero-text-shadow" style="color: rgba(226, 232, 240, 0.9); font-family: var(--font-body);">
-          Over $50M in tax saved for 200+ Sydney businesses since 2008. Proactive tax planning, business advisory, and bookkeeping from CPA-qualified partners who know your industry.
-        </p>
-
-        <div class="mt-10 flex flex-col sm:flex-row gap-4 reveal stagger-3">
-          <a href="/contact#booking" class="inline-flex items-center justify-center gap-2.5 px-8 py-4 text-[0.875rem] font-semibold tracking-[0.01em] rounded-[6px] no-underline transition-all duration-300" style="background: var(--color-emerald); color: #fff;" onmouseover="this.style.background='var(--color-emerald-hover)'" onmouseout="this.style.background='var(--color-emerald)'">
-            Book a Free Consultation
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-          <a href="#services" class="inline-flex items-center justify-center px-8 py-4 text-[0.875rem] font-semibold tracking-[0.01em] rounded-[6px] no-underline transition-all duration-300" style="border: 2px solid rgba(255,255,255,0.4); color: #fff;" onmouseover="this.style.borderColor='rgba(255,255,255,0.7)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.4)'">See How We Help</a>
+    <!-- Trust stats bar — anchored to bottom of hero -->
+    <div class="relative hero-stats-bar">
+      <div class="max-w-[1200px] mx-auto px-6 lg:px-10 py-5 md:py-6">
+        <div class="flex flex-wrap items-center gap-x-8 gap-y-3 md:gap-x-0 md:justify-between reveal stagger-4">
+          <div class="hero-stat-item flex items-center gap-3 md:flex-1 md:justify-center">
+            <span class="text-[1.5rem] md:text-[1.75rem] font-bold tracking-[-0.02em]" style="color: var(--color-emerald-light); font-family: var(--font-heading);">17+</span>
+            <span class="text-[0.75rem] font-medium leading-[1.3] uppercase tracking-[0.06em]" style="color: rgba(203, 213, 225, 0.85); font-family: var(--font-body);">Years in<br>Sydney CBD</span>
+          </div>
+          <div class="hidden md:block w-px h-8" style="background: rgba(255,255,255,0.12);"></div>
+          <div class="hero-stat-item flex items-center gap-3 md:flex-1 md:justify-center">
+            <span class="text-[1.5rem] md:text-[1.75rem] font-bold tracking-[-0.02em]" style="color: var(--color-emerald-light); font-family: var(--font-heading);">200+</span>
+            <span class="text-[0.75rem] font-medium leading-[1.3] uppercase tracking-[0.06em]" style="color: rgba(203, 213, 225, 0.85); font-family: var(--font-body);">Businesses<br>Trust Us</span>
+          </div>
+          <div class="hidden md:block w-px h-8" style="background: rgba(255,255,255,0.12);"></div>
+          <div class="hero-stat-item flex items-center gap-3 md:flex-1 md:justify-center">
+            <span class="text-[1.5rem] md:text-[1.75rem] font-bold tracking-[-0.02em]" style="color: var(--color-emerald-light); font-family: var(--font-heading);">$50M+</span>
+            <span class="text-[0.75rem] font-medium leading-[1.3] uppercase tracking-[0.06em]" style="color: rgba(203, 213, 225, 0.85); font-family: var(--font-body);">Tax Saved<br>for Clients</span>
+          </div>
+          <div class="hidden md:block w-px h-8" style="background: rgba(255,255,255,0.12);"></div>
+          <div class="hero-stat-item flex items-center gap-3 md:flex-1 md:justify-center">
+            <span class="text-[1.5rem] md:text-[1.75rem] font-bold tracking-[-0.02em]" style="color: var(--color-emerald-light); font-family: var(--font-heading);">98%</span>
+            <span class="text-[0.75rem] font-medium leading-[1.3] uppercase tracking-[0.06em]" style="color: rgba(203, 213, 225, 0.85); font-family: var(--font-body);">Client<br>Retention</span>
+          </div>
         </div>
       </div>
     </div>

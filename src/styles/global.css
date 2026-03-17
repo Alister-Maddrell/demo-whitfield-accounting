@@ -399,6 +399,29 @@ input[type="radio"]:checked::after {
 }
 
 /* ============================================
+   HERO SECTION — Full viewport, editorial
+   ============================================ */
+.hero-section {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-top: 68px; /* nav height mobile */
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    padding-top: 76px; /* nav height desktop */
+  }
+}
+
+/* Stats bar at hero bottom — subtle frosted glass */
+.hero-stats-bar {
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ============================================
    HERO TEXT ENHANCEMENT
    ============================================ */
 .hero-text-shadow {
@@ -463,20 +486,12 @@ input[type="radio"]:checked::after {
 }
 
 /* ============================================
-   FULL HD VIEWPORT — Fill hero at 1920×1080
+   FULL HD VIEWPORT — Enhance hero at 1920×1080
    ============================================ */
 @media (min-width: 1200px) and (min-height: 960px) {
-  /* Hero — constrain to viewport, content already flex-centered via HTML */
-  section:first-of-type {
-    min-height: calc(100vh - 81px);
-    min-height: calc(100dvh - 81px);
-    max-height: calc(100vh - 81px);
-    overflow: hidden;
-  }
-
-  /* Bigger heading */
-  section:first-of-type h1 {
-    font-size: clamp(2.5rem, 3.5vw + 0.8rem, 4rem);
+  /* Bigger heading on large screens */
+  .hero-section h1 {
+    font-size: clamp(2.75rem, 3.5vw + 0.8rem, 4.2rem);
   }
 }
 
@@ -484,14 +499,8 @@ input[type="radio"]:checked::after {
    LAPTOP VIEWPORT — Tighter spacing for ≤900px height
    ============================================ */
 @media (min-width: 1024px) and (max-height: 900px) {
-  /* Tighter hero */
-  section:first-of-type {
-    padding-top: 9rem;
-    padding-bottom: 5rem;
-  }
-
   /* Tighter section padding */
-  section {
+  section:not(.hero-section) {
     padding-top: 4.5rem;
     padding-bottom: 4.5rem;
   }
@@ -518,6 +527,12 @@ input[type="radio"]:checked::after {
   /* Blog card image */
   .blog-card .aspect-\[16\/10\] {
     aspect-ratio: 16/8;
+  }
+
+  /* Hero stats bar tighter on short viewports */
+  .hero-stats-bar {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
   }
 }
 
