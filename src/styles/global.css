@@ -613,6 +613,76 @@ input[type="radio"]:checked::after {
 }
 
 /* ============================================
+   MOBILE LAYOUT OPTIMISATIONS
+   ============================================ */
+@media (max-width: 767px) {
+  /* Fix nav-links specificity — must be hidden on mobile */
+  .nav-links { display: none !important; }
+  .nav-burger { display: flex !important; }
+
+  /* Tighter section padding on mobile */
+  section:not(.hero) { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+
+  /* Hero adjustments */
+  .hero { min-height: 100vh; min-height: 100dvh; }
+
+  /* Full-width CTAs on mobile */
+  .btn-primary, .btn-outline {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Cards tighter padding */
+  .card { padding: 1.25rem !important; }
+
+  /* Section header margins */
+  [style*="margin-bottom: 3.5rem"],
+  [style*="margin-bottom: 4rem"] {
+    margin-bottom: 2rem !important;
+  }
+
+  /* Stats grid 2x2 */
+  [style*="grid-template-columns: repeat(4"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
+
+  /* Floating book CTA smaller */
+  .floating-book { bottom: 16px; right: 16px; }
+  .floating-book a { padding: 10px 16px; font-size: 0.75rem; }
+
+  /* Filter buttons wrapping */
+  .filter-btn { padding: 6px 14px; font-size: 0.75rem; }
+
+  /* Blog cards — images shorter */
+  .blog-card img { max-height: 200px; }
+
+  /* Footer tighter */
+  footer { padding-top: 2.5rem !important; }
+
+  /* Team frame smaller */
+  .team-frame { max-width: 200px; }
+
+  /* Overline */
+  .overline { font-size: 0.625rem; }
+}
+
+@media (max-width: 479px) {
+  h1 { font-size: clamp(1.8rem, 8vw, 2.4rem) !important; }
+  h2 { font-size: clamp(1.4rem, 6vw, 1.9rem) !important; }
+
+  .btn-primary, .btn-outline {
+    padding: 12px 20px !important;
+    font-size: 0.8125rem !important;
+  }
+
+  .nav-logo { font-size: 0.9rem !important; }
+
+  .floating-book a { padding: 8px 12px !important; font-size: 0.6875rem !important; }
+}
+
+/* ============================================
    VIEWPORT OPTIMISATIONS
    ============================================ */
 @media (min-width: 1200px) and (min-height: 960px) {
