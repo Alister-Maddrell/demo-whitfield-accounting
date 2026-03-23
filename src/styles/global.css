@@ -624,7 +624,9 @@ input[type="radio"]:checked::after {
   section:not(.hero) { padding-top: 3rem !important; padding-bottom: 3rem !important; }
 
   /* Hero adjustments */
-  .hero { min-height: 100vh; min-height: 100dvh; }
+  .hero { min-height: 100vh; min-height: 100dvh; padding-top: 60px; }
+  .hero > .relative.flex-1 { align-items: flex-start; }
+  .hero > .relative.flex-1 > div { padding-top: 12dvh; padding-bottom: 2rem; }
 
   /* Full-width CTAs on mobile */
   .btn-primary, .btn-outline {
