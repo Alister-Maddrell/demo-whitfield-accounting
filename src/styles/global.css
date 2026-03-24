@@ -469,6 +469,21 @@ a { color: inherit; text-decoration: none; }
   justify-content: center;
 }
 
+/* Desktop: top/middle/bottom wrappers don't change layout */
+.hero-split__top,
+.hero-split__middle,
+.hero-split__bottom {
+  /* no special layout on desktop — just flow normally */
+}
+
+.hero-split__top {
+  margin-bottom: 1.75rem;
+}
+
+.hero-split__bottom {
+  margin-top: 2rem;
+}
+
 /* Subtle edge on the panel where it meets the photo */
 .hero-split__panel::after {
   content: '';
@@ -484,6 +499,7 @@ a { color: inherit; text-decoration: none; }
 .hero-split__stats {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: 20px;
+  margin-top: 1.5rem;
 }
 
 /* Desktop: large screens get more panel padding */
@@ -504,7 +520,7 @@ a { color: inherit; text-decoration: none; }
   }
 }
 
-/* Mobile */
+/* Mobile — full viewport, distributed layout */
 @media (max-width: 767px) {
   .hero-split {
     flex-direction: column;
@@ -512,58 +528,71 @@ a { color: inherit; text-decoration: none; }
     min-height: 100dvh;
   }
 
+  /* Photo strip at top */
+  .hero-split__photo {
+    position: relative !important;
+    height: 90px;
+    flex-shrink: 0;
+    order: 1;
+  }
+
+  /* Hide the photo overlay gradient on mobile (not needed over strip) */
+  .hero-split__photo-overlay {
+    display: none;
+  }
+
+  /* Dark panel fills remaining space */
   .hero-split__panel {
     width: 100%;
     min-height: 0;
     flex: 1;
     order: 2;
-    justify-content: center;
+    justify-content: stretch;
   }
 
   .hero-split__panel-inner {
-    padding: 18px 20px 24px 20px;
+    padding: 2rem 1.5rem;
     min-height: 0;
-    justify-content: center;
     flex: 1;
+    /* KEY: distribute content top to bottom */
+    justify-content: space-between;
   }
 
-  .hero-split__panel-inner .mb-7 {
-    margin-bottom: 10px;
+  /* Top section: overline */
+  .hero-split__top {
+    margin-bottom: 0;
+  }
+
+  /* Middle section: heading + tagline */
+  .hero-split__middle {
+    /* sits in the middle via space-between */
   }
 
   .hero-split__panel-inner h1 {
-    font-size: clamp(1.5rem, 6.5vw, 2rem) !important;
-    line-height: 1.12 !important;
+    font-size: clamp(1.8rem, 7vw, 2.8rem) !important;
+    line-height: 1.1 !important;
   }
 
   .hero-split__panel-inner .mt-6 {
-    margin-top: 8px;
+    margin-top: 0.75rem;
     font-size: 0.8125rem;
     line-height: 1.6;
   }
 
-  .hero-split__panel-inner .mt-8 {
-    margin-top: 14px;
-  }
-
-  /* Show photo peeking at top on mobile */
-  .hero-split__photo {
-    position: relative !important;
-    height: 120px;
-    flex-shrink: 0;
-    order: 1;
+  /* Bottom section: CTA + stats */
+  .hero-split__bottom {
+    margin-top: 0;
   }
 
   .hero-split__stats {
-    margin-top: 16px;
-    padding-top: 14px;
+    margin-top: 1rem;
+    padding-top: 0.875rem;
   }
 
   .hero-split__stats .text-\[1\.375rem\] {
     font-size: 1rem;
   }
 
-  /* Fix stats row overflow at 390px — reduce gap and text sizes */
   .hero-split__stats .flex.items-center.gap-5 {
     gap: 8px;
   }
