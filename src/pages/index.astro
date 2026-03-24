@@ -86,57 +86,54 @@ const articles = [
 <Layout title="Sydney CBD Accountants | Tax, Advisory & SMSF | Whitfield & Associates">
   <Navbar />
 
-  <!-- ═══ HERO — Frosted glass containers ═══ -->
-  <section class="hero hero-glass relative overflow-hidden">
+  <!-- ═══ HERO — Booking-centric ═══ -->
+  <section class="hero relative overflow-hidden">
     <div class="absolute inset-0" style="background-image: url('https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=1920&h=1080&fit=crop&q=80'); background-size: cover; background-position: center 40%;"></div>
-    <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(11,17,32,0.6) 0%, rgba(11,17,32,0.35) 50%, rgba(11,17,32,0.15) 100%);"></div>
-    <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(11,17,32,0.3) 0%, transparent 40%, transparent 60%, rgba(11,17,32,0.5) 100%);"></div>
+    <div class="absolute inset-0" style="background: linear-gradient(105deg, rgba(11,17,32,0.94) 0%, rgba(11,17,32,0.82) 40%, rgba(11,17,32,0.4) 70%, rgba(11,17,32,0.2) 100%);"></div>
+    <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(11,17,32,0.2) 0%, transparent 30%, transparent 70%, rgba(11,17,32,0.7) 100%);"></div>
 
     <div class="relative flex-1 flex items-center">
-      <div class="max-w-[1200px] w-full mx-auto px-6 lg:px-10 hero-glass-layout">
-        <div class="max-w-[550px]">
-
-          <!-- Main frosted glass card -->
-          <div class="glass-card-main reveal">
-            <div class="flex items-center gap-3 mb-5">
-              <div class="w-8 h-[1.5px]" style="background: var(--color-gold-light);"></div>
-              <span class="text-[0.6875rem] font-semibold tracking-[0.18em] uppercase" style="color: var(--color-gold-light);">Established 2008</span>
-            </div>
-
-            <h1 class="reveal stagger-1" style="color: #F8FAFC; line-height: 1.08;">
-              Keep More of What<br class="hidden sm:block"> You Earn. <em>Grow What<br class="hidden sm:block"> You've Built.</em>
-            </h1>
-
-            <p class="text-[0.9375rem] md:text-[1rem] leading-[1.7] mt-4 reveal stagger-2" style="color: rgba(226, 232, 240, 0.85);">
-              Proactive tax planning, business advisory, and bookkeeping from CPA-qualified partners in Sydney CBD.
-            </p>
-
-            <div class="mt-6 reveal stagger-3">
-              <a href="/contact#booking" class="btn-primary">
-                Book a Free Consultation
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </a>
-            </div>
+      <div class="max-w-[1200px] w-full mx-auto px-6 lg:px-10 py-16">
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-3 mb-7 reveal">
+            <div class="w-8 h-[1.5px]" style="background: var(--color-gold-light);"></div>
+            <span class="text-[0.6875rem] font-semibold tracking-[0.18em] uppercase" style="color: var(--color-gold-light);">Established 2008 · Sydney CBD</span>
           </div>
 
-          <!-- Stats row — frosted glass cells -->
-          <div class="glass-stats-row reveal stagger-4">
-            <div class="glass-stat-cell">
-              <span class="glass-stat-number" style="font-family: var(--font-heading);">200+</span>
-              <span class="glass-stat-label">Businesses<br>Trust Us</span>
-            </div>
-            <div class="glass-stat-divider"></div>
-            <div class="glass-stat-cell">
-              <span class="glass-stat-number" style="font-family: var(--font-heading);">$50M+</span>
-              <span class="glass-stat-label">Tax Saved<br>for Clients</span>
-            </div>
-            <div class="glass-stat-divider hidden sm:block"></div>
-            <div class="glass-stat-cell hidden sm:flex">
-              <span class="glass-stat-number" style="font-family: var(--font-heading);">98%</span>
-              <span class="glass-stat-label">Client<br>Retention</span>
-            </div>
+          <h1 class="reveal stagger-1 hero-text-shadow" style="color: #F8FAFC; line-height: 1.08;">
+            Keep More of What<br class="hidden sm:block"> You Earn. <em>Grow What<br class="hidden sm:block"> You've Built.</em>
+          </h1>
+
+          <p class="text-[1.0625rem] md:text-[1.125rem] leading-[1.75] max-w-[520px] mt-7 reveal stagger-2 hero-text-shadow" style="color: rgba(226, 232, 240, 0.9);">
+            Over $50M in tax saved for 200+ Sydney businesses. Proactive tax planning, business advisory, and bookkeeping from CPA-qualified partners.
+          </p>
+
+          <div class="mt-10 flex flex-col sm:flex-row gap-4 reveal stagger-3">
+            <a href="/contact#booking" class="btn-primary">
+              Book a Free Consultation
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="#services" class="btn-outline-light">
+              See How We Help
+            </a>
           </div>
 
+          <div class="mt-10 flex items-center gap-6 reveal stagger-4">
+            <div class="flex items-center gap-2.5">
+              <span class="text-[1.5rem] font-bold tracking-[-0.02em]" style="color: var(--color-gold-light); font-family: var(--font-heading);">200+</span>
+              <span class="text-[0.6875rem] font-medium uppercase tracking-[0.06em] leading-tight" style="color: rgba(203,213,225,0.7);">Businesses<br>Trust Us</span>
+            </div>
+            <div class="w-px h-8" style="background: rgba(255,255,255,0.12);"></div>
+            <div class="flex items-center gap-2.5">
+              <span class="text-[1.5rem] font-bold tracking-[-0.02em]" style="color: var(--color-gold-light); font-family: var(--font-heading);">$50M+</span>
+              <span class="text-[0.6875rem] font-medium uppercase tracking-[0.06em] leading-tight" style="color: rgba(203,213,225,0.7);">Tax Saved<br>for Clients</span>
+            </div>
+            <div class="w-px h-8 hidden sm:block" style="background: rgba(255,255,255,0.12);"></div>
+            <div class="hidden sm:flex items-center gap-2.5">
+              <span class="text-[1.5rem] font-bold tracking-[-0.02em]" style="color: var(--color-gold-light); font-family: var(--font-heading);">98%</span>
+              <span class="text-[0.6875rem] font-medium uppercase tracking-[0.06em] leading-tight" style="color: rgba(203,213,225,0.7);">Client<br>Retention</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
