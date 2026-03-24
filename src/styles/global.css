@@ -39,6 +39,7 @@
 html {
   scroll-behavior: smooth;
   font-feature-settings: 'kern' 1, 'liga' 1;
+  overflow-x: hidden;
 }
 
 body {
@@ -555,7 +556,25 @@ a { color: inherit; text-decoration: none; }
   }
 
   .hero-split__stats .text-\[1\.375rem\] {
-    font-size: 1.125rem;
+    font-size: 1rem;
+  }
+
+  /* Fix stats row overflow at 390px — reduce gap and text sizes */
+  .hero-split__stats .flex.items-center.gap-5 {
+    gap: 8px;
+  }
+
+  .hero-split__stats .flex.items-center.gap-2\.5 {
+    gap: 4px;
+  }
+
+  .hero-split__stats .text-\[0\.625rem\] {
+    font-size: 0.5625rem;
+    letter-spacing: 0.04em;
+  }
+
+  .hero-split__stats .w-px.h-7 {
+    height: 20px;
   }
 
   .hero-split__panel::after {
